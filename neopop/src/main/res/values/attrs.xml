@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    shadow colours-->
+    <attr name="neopop_top_surface_color" format="color" />
+    <attr name="neopop_right_surface_color" format="color" />
+    <attr name="neopop_bottom_surface_color" format="color" />
+    <attr name="neopop_left_surface_color" format="color" />
+    <attr name="neopop_parent_view_color" format="color" />
+    <attr name="neopop_grandparent_view_color" format="color" />
+    <attr name="neopop_stroke_width" format="dimension" />
+    <attr name="neopop_stroke_color" format="color" />
+    <attr name="neopop_button_position">
+        <flag name="top" value="0x001" />
+        <flag name="right" value="0x002" />
+        <flag name="bottom" value="0x004" />
+        <flag name="left" value="0x008" />
+        <flag name="center" value="0x010" />
+    </attr>
+
+    <!-- tilt shadow color -->
+    <attr name="neopop_shadow_color" format="color" />
+    <attr name="neopop_floating_shadow_color" format="color" />
+
+    <attr name="neopop_card_rotated_towards" format="string">
+        <enum name="positive_y" value="0" />
+        <enum name="negative_y" value="1" />
+        <!-- add these when we support x-axis-->
+
+        <!-- <enum name="positive_x" value="2" />-->
+        <!-- <enum name="negative_x" value="3" />-->
+    </attr>
+    <attr name="neopop_gravity" format="string">
+        <enum name="on_space" value="0" />
+        <enum name="on_ground" value="1" />
+        <!-- add these when we support x-axis-->
+
+        <!-- <enum name="positive_x" value="2" />-->
+        <!-- <enum name="negative_x" value="3" />-->
+    </attr>
+    <attr name="neopop_bottom_surface_rotation" format="float" />
+    <attr name="neopop_center_surface_rotation" format="float" />
+
+    <!-- main card color-->
+    <attr name="neopop_center_surface_color" format="color" />
+    <!--shadow visibilities
+     NOTE: final shadow visibility is a function of shadow colors and isShadowVisible -->
+    <attr name="neopop_is_bottom_surface_visible" format="boolean" />
+    <attr name="neopop_is_top_surface_visible" format="boolean" />
+    <attr name="neopop_is_left_surface_visible" format="boolean" />
+    <attr name="neopop_is_right_surface_visible" format="boolean" />
+
+    <!--    the the depth of the shadow -->
+    <attr name="neopop_depth" format="dimension" />
+
+    <attr name="neopop_top_shimmer_color" format="color" />
+    <attr name="neopop_bottom_shimmer_color" format="color" />
+    <attr name="neopop_shimmer_width" format="dimension" />
+    <attr name="neopop_shimmer_duration" format="integer" />
+    <attr name="neopop_button_height" format="dimension" />
+    <attr name="neopop_shadow_height" format="dimension" />
+    <attr name="neopop_shadow_top_margin" format="dimension" />
+    <attr name="neopop_show_shimmer" format="boolean" />
+    <attr name="neopop_superview_color" format="color" />
+    <attr name="neopop_shimmer_color" format="color" />
+
+    <!-- to add static strokes on bottom and right corner of the button . for a specialized press effect-->
+    <attr name="neopop_is_stroked_button" format="boolean" />
+    <!-- assign reference of button which is on top of this button -->
+    <attr name="neopop_button_on_top" format="reference" />
+
+    <!--assign reference of button which is on left of this button -->
+    <attr name="neopop_button_on_left" format="reference" />
+
+    <!-- assign reference of button which is on bottom of this button-->
+    <attr name="neopop_button_on_bottom" format="reference" />
+
+    <!--assign reference of button which is on right of this button -->
+    <attr name="neopop_button_on_right" format="reference" />
+    <attr name="neopop_draw_full_height" format="boolean" />
+    <attr name="neopop_draw_full_width" format="boolean" />
+    <attr name="neopop_disabled_stroke_opacity" format="integer" />
+    <attr name="neopop_disabled_card_color" format="color" />
+    <attr name="neopop_disabled_right_surface_color" format="color" />
+    <attr name="neopop_disabled_bottom_surface_color" format="color" />
+
+    <attr name="neopop_shimmer_repeat_delay" format="integer" />
+    <attr name="neopop_shimmer_start_delay" format="integer" />
+    <attr name="neopop_animate_on_touch" format="boolean" />
+
+    <!--attributes for switches-->
+    <attr name="checked_drawable" format="reference" />
+    <attr name="un_checked_drawable" format="reference" />
+    <attr name="pressed_drawable" format="reference" />
+    <attr name="track_drawable" format="reference" />
+
+    <declare-styleable name="PopFrameLayout">
+        <attr name="neopop_depth" />
+        <attr name="neopop_stroke_width" />
+        <attr name="neopop_top_surface_color" />
+        <attr name="neopop_right_surface_color" />
+        <attr name="neopop_bottom_surface_color" />
+        <attr name="neopop_left_surface_color" />
+        <attr name="neopop_parent_view_color" />
+        <attr name="neopop_grandparent_view_color" />
+
+        <attr name="neopop_stroke_color" />
+        <attr name="neopop_center_surface_color" />
+        <attr name="neopop_is_top_surface_visible" />
+        <attr name="neopop_is_left_surface_visible" />
+        <attr name="neopop_is_bottom_surface_visible" />
+        <attr name="neopop_is_right_surface_visible" />
+        <attr name="neopop_shimmer_duration" />
+        <!-- to add static strokes on bottom and right corner of the button . for a specialized press effect-->
+        <attr name="neopop_is_stroked_button" />
+        <attr name="neopop_button_position" />
+        <!-- assign reference of button which is on top of this button -->
+        <attr name="neopop_button_on_top" />
+
+        <!--assign reference of button which is on left of this button -->
+        <attr name="neopop_button_on_left" />
+
+        <!-- assign reference of button which is on bottom of this button-->
+        <attr name="neopop_button_on_bottom" />
+
+        <!--assign reference of button which is on right of this button -->
+        <attr name="neopop_button_on_right" />
+
+        <attr name="neopop_shimmer_color" />
+        <attr name="neopop_shimmer_width" />
+        <attr name="neopop_show_shimmer" />
+        <attr name="neopop_draw_full_height" />
+        <attr name="neopop_draw_full_width" />
+        <attr name="neopop_disabled_stroke_opacity" />
+        <attr name="neopop_disabled_card_color" />
+        <attr name="neopop_disabled_right_surface_color" />
+        <attr name="neopop_disabled_bottom_surface_color" />
+        <attr name="neopop_shimmer_repeat_delay" />
+        <attr name="neopop_shimmer_start_delay" />
+        <attr name="neopop_animate_on_touch" />
+    </declare-styleable>
+
+    <declare-styleable name="TiltFrameLayout">
+        <attr name="neopop_depth" />
+        <attr name="neopop_shadow_color" />
+        <attr name="neopop_center_surface_color" />
+        <attr name="neopop_bottom_surface_color" />
+        <attr name="neopop_center_surface_rotation" />
+        <attr name="neopop_bottom_surface_rotation" />
+        <attr name="neopop_gravity" />
+        <attr name="neopop_shimmer_color" />
+        <attr name="neopop_bottom_shimmer_color" />
+        <attr name="neopop_shimmer_duration" />
+        <attr name="neopop_shimmer_width" />
+        <attr name="neopop_show_shimmer" />
+        <attr name="neopop_shadow_top_margin" />
+        <attr name="neopop_shadow_height" />
+        <attr name="neopop_shimmer_repeat_delay" />
+        <attr name="neopop_shimmer_start_delay" />
+        <attr name="neopop_stroke_color" />
+        <attr name="neopop_stroke_width" />
+        <attr name="neopop_is_stroked_button" />
+        <attr name="neopop_animate_on_touch" />
+    </declare-styleable>
+
+    <declare-styleable name="NeoPopButton">
+        <attr name="neopop_depth" />
+        <attr name="neopop_stroke_width" />
+        <attr name="neopop_top_surface_color" />
+        <attr name="neopop_right_surface_color" />
+        <attr name="neopop_bottom_surface_color" />
+        <attr name="neopop_left_surface_color" />
+        <attr name="neopop_parent_view_color" />
+        <attr name="neopop_grandparent_view_color" />
+
+        <attr name="neopop_stroke_color" />
+        <attr name="neopop_center_surface_color" />
+        <attr name="neopop_is_top_surface_visible" />
+        <attr name="neopop_is_left_surface_visible" />
+        <attr name="neopop_is_bottom_surface_visible" />
+        <attr name="neopop_is_right_surface_visible" />
+        <attr name="neopop_shimmer_duration" />
+        <!-- to add static strokes on bottom and right corner of the button . for a specialized press effect-->
+        <attr name="neopop_is_stroked_button" />
+        <attr name="neopop_button_position" />
+        <!-- assign reference of button which is on top of this button -->
+        <attr name="neopop_button_on_top" />
+
+        <!--assign reference of button which is on left of this button -->
+        <attr name="neopop_button_on_left" />
+
+        <!-- assign reference of button which is on bottom of this button-->
+        <attr name="neopop_button_on_bottom" />
+
+        <!--assign reference of button which is on right of this button -->
+        <attr name="neopop_button_on_right" />
+
+        <attr name="neopop_shimmer_color" />
+        <attr name="neopop_shimmer_width" />
+        <attr name="neopop_show_shimmer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="NeoPopToggleButton">
+        <attr name="checked_drawable" />
+        <attr name="un_checked_drawable" />
+        <attr name="track_drawable" />
+        <attr name="toggleHapticsEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="NeoPopRadioButton">
+        <attr name="checked_drawable" />
+        <attr name="un_checked_drawable" />
+        <attr name="pressed_drawable" />
+    </declare-styleable>
+
+    <declare-styleable name="NeoPopCheckBox">
+        <attr name="checked_drawable" />
+        <attr name="un_checked_drawable" />
+        <attr name="pressed_drawable" />
+    </declare-styleable>
+
+</resources>

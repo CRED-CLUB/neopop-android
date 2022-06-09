@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_studio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.066" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.868" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="146dp" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <include
+        android:id="@+id/controller"
+        layout="@layout/layout_controler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left" />
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_switches_ttl"
+        app:layout_constraintBottom_toTopOf="@id/guideline_middle"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+
+
+    <ImageView
+        android:id="@+id/text_radio_btn"
+        android:layout_width="88dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_radio_btn"
+        app:layout_constraintEnd_toStartOf="@id/text_check_box"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_middle" />
+
+    <club.cred.neopop.NeoPopRadioButton
+        android:id="@+id/radio_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/text_radio_btn"
+        app:layout_constraintStart_toStartOf="@id/text_radio_btn"
+        app:layout_constraintTop_toBottomOf="@id/text_radio_btn" />
+
+    <ImageView
+        android:id="@+id/text_check_box"
+        android:layout_width="58dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_check_box"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/text_radio_btn"
+        app:layout_constraintTop_toBottomOf="@id/guideline_middle" />
+
+    <club.cred.neopop.NeoPopCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/text_check_box"
+        app:layout_constraintStart_toStartOf="@id/text_check_box"
+        app:layout_constraintTop_toBottomOf="@id/text_check_box" />
+
+    <ImageView
+        android:id="@+id/text_toggle"
+        android:layout_width="43dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_toggle"
+        app:layout_constraintBottom_toTopOf="@+id/controller"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/text_radio_btn" />
+
+    <club.cred.neopop.NeoPopToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/text_toggle"
+        app:layout_constraintStart_toStartOf="@id/text_toggle"
+        app:layout_constraintTop_toBottomOf="@id/text_toggle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

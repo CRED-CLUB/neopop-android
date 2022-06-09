@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<club.cred.neopop.PopFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Primary40_Flat_White"
+    android:layout_width="match_parent"
+    android:clickable="true">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="10.5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_pay_now_no_arrow_black" />
+
+</club.cred.neopop.PopFrameLayout>

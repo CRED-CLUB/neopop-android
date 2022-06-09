@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<club.cred.neopop.PopFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Flat_Stroke_Button"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="73dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_switch_btn" />
+
+</club.cred.neopop.PopFrameLayout>

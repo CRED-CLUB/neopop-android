@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>BooleanPropertyNaming:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate$private var onLayoutCalled = false</ID>
+    <ID>BooleanPropertyNaming:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate$var showShimmer: Boolean = true set(value) { neoPopQuadDrawableData = neoPopQuadDrawableData.copy(hasShimmer = value) field = value }</ID>
+    <ID>BooleanPropertyNaming:FrameDelegate.kt$FrameDelegate$private var shouldPerformClick = false</ID>
+    <ID>BooleanPropertyNaming:FrameDelegate.kt$FrameDelegate$val drawFullHeight = getBoolean( R.styleable.PopFrameLayout_neopop_draw_full_height, false ) &amp;&amp; buttonPosition == NeoPopStyle.center</ID>
+    <ID>BooleanPropertyNaming:FrameDelegate.kt$FrameDelegate$val drawFullWidth = getBoolean( R.styleable.PopFrameLayout_neopop_draw_full_width, false ) &amp;&amp; buttonPosition == NeoPopStyle.center</ID>
+    <ID>BooleanPropertyNaming:FrameDelegate.kt$FrameDelegate$val showShimmer = getBoolean(R.styleable.PopFrameLayout_neopop_show_shimmer, false)</ID>
+    <ID>BooleanPropertyNaming:NeoPopDelegate.kt$NeoPopDelegate$val drawFullHeight = getBoolean( R.styleable.NeoPopView_neopop_draw_full_height, false )</ID>
+    <ID>BooleanPropertyNaming:NeoPopDelegate.kt$NeoPopDelegate$val drawFullWidth = getBoolean( R.styleable.NeoPopView_neopop_draw_full_width, false )</ID>
+    <ID>BooleanPropertyNaming:NeoPopDelegate.kt$NeoPopDelegate$val showShimmer = getBoolean(R.styleable.NeoPopButton_neopop_show_shimmer, false)</ID>
+    <ID>BooleanPropertyNaming:NeoPopDrawable.kt$NeoPopDrawable$private var showShimmer = false</ID>
+    <ID>BooleanPropertyNaming:NeoPopHelper.kt$NeoPopHelper$var calculatedBottomShadowVisibility = true</ID>
+    <ID>BooleanPropertyNaming:NeoPopHelper.kt$NeoPopHelper$var calculatedLeftShadowVisibility = true</ID>
+    <ID>BooleanPropertyNaming:NeoPopHelper.kt$NeoPopHelper$var calculatedRightShadowVisibility = true</ID>
+    <ID>BooleanPropertyNaming:NeoPopHelper.kt$NeoPopHelper$var calculatedTopShadowVisibility = true</ID>
+    <ID>BooleanPropertyNaming:NeoPopQuadrilateralButton.kt$NeoPopQuadrilateralButton$var showShimmer by delegateQuad::showShimmer</ID>
+    <ID>BooleanPropertyNaming:NeoPopQuadrilateralDrawable.kt$NeoPopQuadrilateralDrawable$var showShimmer = false</ID>
+    <ID>BooleanPropertyNaming:NeoQuadAnimationHelper.kt$NeoQuadAnimationHelper$private var shouldPerformClick = false</ID>
+    <ID>BooleanPropertyNaming:NeoQuadAnimationHelper.kt$NeoQuadAnimationHelper$val motionEventDown = state.isButtonGoingDown &amp;&amp; state.currentState is TiltAnimationState.State.Touch</ID>
+    <ID>ComplexMethod:NeoPopDrawable.kt$NeoPopDrawable$private fun drawEdges(canvas: Canvas)</ID>
+    <ID>ComplexMethod:NeoPopHelper.kt$NeoPopHelper$fun getCalculatedButtonStyles( mainCardColor: Int, buttonPosition: Int, buttonOnRight: Int, buttonOnLeft: Int, buttonOnTop: Int, buttonOnBottom: Int, shadowWidth: Float, isStrokedButton: Boolean, parentViewColor: Int, grandParentViewColor: Int, style: NeoPopStyle = NeoPopStyle(), ): NeoPopStyle</ID>
+    <ID>LongMethod:FrameDelegate.kt$FrameDelegate$fun calculateButtonStyles(attrs: AttributeSet?)</ID>
+    <ID>LongMethod:NeoPopDelegate.kt$NeoPopDelegate$fun calculateButtonStyles(attrs: AttributeSet?)</ID>
+    <ID>LongMethod:NeoPopHelper.kt$NeoPopHelper$fun getCalculatedButtonStyles( mainCardColor: Int, buttonPosition: Int, buttonOnRight: Int, buttonOnLeft: Int, buttonOnTop: Int, buttonOnBottom: Int, shadowWidth: Float, isStrokedButton: Boolean, parentViewColor: Int, grandParentViewColor: Int, style: NeoPopStyle = NeoPopStyle(), ): NeoPopStyle</ID>
+    <ID>LongMethod:NeoPopQuadDrawableDelegate.kt$NeoPopQuadDrawableDelegate$fun calculatePopDrawableData( attrs: AttributeSet? )</ID>
+    <ID>LongMethod:NeoPopQuadFrameLayoutDrawableDelegate.kt$NeoPopQuadFrameLayoutDrawableDelegate$fun calculatePopDrawableData( attrs: AttributeSet? )</ID>
+    <ID>MagicNumber:FrameDelegate.kt$FrameDelegate$50L</ID>
+    <ID>MagicNumber:NeoPopDelegate.kt$NeoPopDelegate$50L</ID>
+    <ID>MagicNumber:NeoPopStyle.kt$NeoPopStyle.Companion$0.1f</ID>
+    <ID>MagicNumber:NeoPopStyle.kt$NeoPopStyle.Companion$0.2f</ID>
+    <ID>MagicNumber:NeoPopStyle.kt$NeoPopStyle.Companion$0.3f</ID>
+    <ID>MagicNumber:NeoPopStyle.kt$NeoPopStyle.Companion$3</ID>
+    <ID>MandatoryBracesIfStatements:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate$disabledStyle</ID>
+    <ID>MandatoryBracesIfStatements:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate$enabledStyle</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawLine( neoPopGeometry.bottomShadow.leftBottom.x + slantedLineStrokeWidthSqrt, neoPopGeometry.bottomShadow.leftBottom.y - slantedLineStrokeWidthSqrt, neoPopGeometry.bottomShadow.leftTop.x + slantedLineStrokeWidthSqrt, neoPopGeometry.bottomShadow.leftTop.y - slantedLineStrokeWidthSqrt, Paint().apply { color = it strokeWidth = slantedLineStrokeWidth } )</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawLine( neoPopGeometry.endShadow.leftTop.x - slantedLineStrokeWidthSqrt, neoPopGeometry.endShadow.leftTop.y + slantedLineStrokeWidthSqrt, neoPopGeometry.endShadow.rightTop.x - slantedLineStrokeWidthSqrt, neoPopGeometry.endShadow.rightTop.y + slantedLineStrokeWidthSqrt, Paint().apply { color = it strokeWidth = slantedLineStrokeWidth } )</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke1, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke2, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke3, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke5, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke6, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopDrawable.kt$NeoPopDrawable$canvas.drawStroke(neoPopGeometry.stroke8, getStrokePaint(it))</ID>
+    <ID>MandatoryBracesIfStatements:NeoPopNumberKeyboard.kt$NeoPopNumberKeyboard$ic.commitText(value, 1)</ID>
+    <ID>MayBeConst:NeoPopGeometry.kt$NeoPopGeometry.Companion$val bigShimmerRect = 0.9f</ID>
+    <ID>MayBeConst:NeoPopGeometry.kt$NeoPopGeometry.Companion$val thinShimmerRect = 0.3f</ID>
+    <ID>MayBeConst:NeoPopQuadGeometry.kt$NeoPopQuadGeometry.Companion$val BIG_SHIMMER_WIDTh_PERCENTAGE = 0.55</ID>
+    <ID>MayBeConst:NeoPopQuadGeometry.kt$NeoPopQuadGeometry.Companion$val SHIMMER_ANIMATION_TIME = 1500</ID>
+    <ID>MayBeConst:NeoPopQuadGeometry.kt$NeoPopQuadGeometry.Companion$val SHIMMER_SPACING_PERCENTAGE = 0.12</ID>
+    <ID>MayBeConst:NeoPopQuadGeometry.kt$NeoPopQuadGeometry.Companion$val SMALL_SHIMMER_WIDTH_PERCENTAGE = 0.24</ID>
+    <ID>NamedArguments:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate$updatePadding( paddingLeft + horizontalPadding, paddingTop, paddingRight + horizontalPadding, bPadding )</ID>
+    <ID>NamedArguments:FrameDelegate.kt$FrameDelegate$ComponentStrokeColors( strokeColor, strokeColor, strokeColor, strokeColor )</ID>
+    <ID>NamedArguments:NeoPopDelegate.kt$NeoPopDelegate$ComponentStrokeColors( strokeColor, strokeColor, strokeColor, strokeColor )</ID>
+    <ID>NamedArguments:NeoPopHelper.kt$NeoPopHelper$getCalculatedButtonStyles( cardColor, buttonPosition, buttonOnRight, buttonOnLeft, buttonOnTop, buttonOnBottom, shadowWidth, isStrokedButton, parentViewColor, grandParentViewColor, this )</ID>
+    <ID>NamedArguments:NeoPopQuadDrawableDelegate.kt$NeoPopQuadDrawableDelegate$NeoPopQuadDrawableData( cardColor, shadowColor, shadowWidth, mainCardAngle, shadowAngle, gravity, shimmerColor, shimmerWidth, shimmerDuration, showShimmer, neoPopBlackShadowHeight, bottomShimmerColor, floatingShadowColor = floatingShadowColor, strokeWidth = strokeWidth, isStrokeEnabled = isStrokeEnabled, strokeColor = strokeColor )</ID>
+    <ID>ReturnCount:FrameDelegate.kt$FrameDelegate$fun onTouch(event: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:NeoQuadAnimationHelper.kt$NeoQuadAnimationHelper$fun onTouch(event: MotionEvent): Boolean</ID>
+    <ID>TooManyFunctions:NeoPopQuadrilateralDrawable.kt$NeoPopQuadrilateralDrawable : DrawableNeoButtonDrawableInteractor</ID>
+    <ID>UnnecessaryAbstractClass:BaseNeoPopDrawableQuadDelegate.kt$BaseNeoPopDrawableQuadDelegate</ID>
+    <ID>UnnecessaryApply:NeoPopNumberKeyboard.kt$NeoPopNumberKeyboard$apply { updateKeyUi() }</ID>
+    <ID>UnnecessarySafeCall:NeoPopDelegate.kt$NeoPopDelegate$buttonAnimator?.doOnEnd { popButtonAnimationListeners.forEach { listener -&gt; listener.onAnimate( NeoPopAnimationState(isButtonGoingUp = false, isCompleted = true), 1f ) } }</ID>
+    <ID>UnnecessarySafeCall:NeoPopDelegate.kt$NeoPopDelegate$buttonAnimator?.doOnEnd { popButtonAnimationListeners.forEach { listener -&gt; listener.onAnimate( NeoPopAnimationState(isButtonGoingUp = true, isCompleted = true), 0f ) } }</ID>
+    <ID>UnsafeCallOnNullableType:NeoPopDrawable.kt$NeoPopDrawable$neoPopGeometry.clipPath!!</ID>
+    <ID>UnusedPrivateMember:FrameDelegate.kt$FrameDelegate$private fun updateStyles()</ID>
+    <ID>UnusedPrivateMember:NeoPopDelegate.kt$NeoPopDelegate$private val isClickable: Boolean</ID>
+    <ID>UnusedPrivateMember:NeoPopQuadrilateralDrawable.kt$NeoPopQuadrilateralDrawable$dx: Float</ID>
+    <ID>UseIfInsteadOfWhen:NeoPopGeometry.kt$NeoPopGeometry$when { !isBottomSheet -&gt; topPlane else -&gt; Quadrilateral( leftTop = PointF(0f, totalDepth), rightTop = PointF(size.width.toFloat(), totalDepth), rightBottom = PointF(size.width.toFloat(), size.height.toFloat()), leftBottom = PointF(0f, size.height.toFloat()) ) }</ID>
+    <ID>VarCouldBeVal:NeoPopDelegate.kt$NeoPopDelegate$var isBottomShadowVisible = getBoolean(R.styleable.NeoPopView_neopop_isBottomShadowVisible, true)</ID>
+  </CurrentIssues>
+</SmellBaseline>

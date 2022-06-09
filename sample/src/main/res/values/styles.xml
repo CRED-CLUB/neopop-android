@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.NeoPop" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="Flat_Stroke_Button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="neopop_button_position">center</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">@color/white</item>
+        <item name="neopop_parent_view_color">#0d0d0d</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="Elevated_Stroke_Button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">33dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">@color/white</item>
+        <item name="neopop_right_surface_color">#E0E0E0</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_bottom_surface_color">#8A8A8A</item>
+        <item name="neopop_parent_view_color">#0d0d0d</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="Secondary20_Flat_Black">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="neopop_button_position">center</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">@color/white</item>
+        <item name="neopop_parent_view_color">#0d0d0d</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+
+    <style name="TiltFloatingButton">
+        <item name="android:layout_height">63dp</item>
+        <item name="neopop_center_surface_color">#FFEB34</item>
+        <item name="neopop_center_surface_rotation">18.8</item>
+        <item name="neopop_bottom_surface_rotation">32</item>
+        <item name="neopop_shimmer_width">50dp</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_show_shimmer">true</item>
+        <item name="neopop_shadow_height">13dp</item>
+        <item name="neopop_depth">8dp</item>
+        <item name="neopop_top_shimmer_color">@color/white</item>
+        <item name="neopop_gravity">on_space</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="TiltNonFloatingButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="neopop_center_surface_rotation">18.8</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_bottom_surface_rotation">32</item>
+        <item name="neopop_show_shimmer">false</item>
+        <item name="neopop_depth">8dp</item>
+        <item name="neopop_gravity">on_ground</item>
+    </style>
+
+
+    <style name="TiltStrokeButton">
+        <item name="android:layout_height">63dp</item>
+        <item name="neopop_center_surface_color">@color/pop_black</item>
+        <item name="neopop_center_surface_rotation">18.8</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_bottom_surface_rotation">32</item>
+        <item name="neopop_show_shimmer">true</item>
+        <item name="neopop_depth">8dp</item>
+        <item name="neopop_shadow_height">13dp</item>
+        <item name="neopop_top_shimmer_color">@color/white</item>
+        <item name="neopop_stroke_color">#8DD04A</item>
+        <item name="neopop_bottom_surface_color">#3F6915</item>
+        <item name="neopop_is_stroked_button">true</item>
+        <item name="neopop_stroke_width">0.7dp</item>
+        <item name="neopop_gravity">on_space</item>
+    </style>
+
+    <style name="ScanBtn">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">#8DD04A</item>
+        <item name="neopop_parent_view_color">#0d0d0d</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="neopop_show_shimmer">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="neopop_right_surface_color">#629F25</item>
+        <item name="neopop_bottom_surface_color">#3F6915</item>
+    </style>
+
+    <style name="PositionedButton">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_width">52dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">#8DD04A</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="neopop_show_shimmer">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="neopop_right_surface_color">#629F25</item>
+        <item name="neopop_bottom_surface_color">#3F6915</item>
+        <item name="neopop_parent_view_color">@color/pop_black</item>
+    </style>
+
+    <style name="AlignedButtons">
+        <item name="android:gravity">center</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="neopop_stroke_color">#8DD04A</item>
+        <item name="neopop_parent_view_color">#0d0d0d</item>
+        <item name="neopop_center_surface_color">#0d0d0d</item>
+        <item name="android:clickable">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="neopop_right_surface_color">#629F25</item>
+        <item name="neopop_bottom_surface_color">#3F6915</item>
+    </style>
+
+
+    <style name="Primary40_Plunk_White">
+        <item name="android:layout_height">43dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+
+    <style name="Primary40_Flat_White">
+        <item name="neopop_depth">3dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="neopop_button_position">center</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_parent_view_color">#0D0D0D</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+
+    <style name="Primary30_Plunk_White">
+        <item name="android:layout_height">33dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+
+    <style name="Primary30_Flat_White">
+        <item name="neopop_depth">3dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="neopop_button_position">center</item>
+        <item name="neopop_parent_view_color">#0D0D0D</item>
+        <item name="android:clickable">true</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+
+    <style name="Primary20_Plunk_White">
+        <item name="android:layout_height">23dp</item>
+        <item name="neopop_depth">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+
+    <style name="Primary20_Flat_White">
+        <item name="neopop_depth">3dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="neopop_center_surface_color">@color/white</item>
+        <item name="neopop_button_position">center</item>
+        <item name="neopop_parent_view_color">#0D0D0D</item>
+        <item name="neopop_draw_full_width">true</item>
+        <item name="neopop_draw_full_height">true</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/layout_studio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.066" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.868" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="28dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_cred_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_top" />
+
+    <ImageView
+        android:layout_width="241dp"
+        android:layout_height="127dp"
+        android:background="@drawable/ic_neo_pop_framework_ttl"
+        app:layout_constraintBottom_toTopOf="@id/main_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <include
+        android:id="@+id/switch_btn"
+        layout="@layout/layout_switches_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left" />
+
+    <include
+        android:id="@+id/adv_btn"
+        layout="@layout/layout_advanced_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@id/switch_btn"
+        app:layout_constraintEnd_toEndOf="@id/switch_btn"
+        app:layout_constraintStart_toStartOf="@id/switch_btn" />
+
+
+    <include
+        android:id="@+id/primary_btn"
+        layout="@layout/layout_pop_button"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@id/adv_btn"
+        app:layout_constraintEnd_toEndOf="@id/adv_btn"
+        app:layout_constraintStart_toStartOf="@id/adv_btn" />
+
+
+    <include
+        android:id="@+id/main_btn"
+        layout="@layout/layout_main_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@id/primary_btn"
+        app:layout_constraintEnd_toEndOf="@id/primary_btn"
+        app:layout_constraintStart_toStartOf="@id/primary_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
