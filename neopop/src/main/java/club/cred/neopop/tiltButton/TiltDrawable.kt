@@ -148,7 +148,7 @@ internal class TiltDrawable(
         }
     }
 
-    private fun Canvas.clipPop(block: () -> Unit) {
+    private inline fun Canvas.clipPop(block: () -> Unit) {
         if (tiltStyle.hasShimmer && isShimmerAnimating) {
             translateWith(dx, dy) {
                 clipPath(neoPopGeometry.clipPath.fullOutline)
