@@ -1,9 +1,12 @@
 package club.cred.neopop.common
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.media.AudioManager
 import android.provider.Settings
+import android.util.AttributeSet
 import android.view.HapticFeedbackConstants
+import android.view.MotionEvent
 import android.view.View
 
 internal fun View.shouldPerformHaptics(checkForSilentMode: Boolean = false): Boolean {
@@ -28,3 +31,19 @@ internal fun View.provideSafeHapticFeedback() {
         return
     }
 }
+
+internal inline fun View.withAttrs(
+    set: AttributeSet?,
+    attrs: IntArray,
+    func: TypedArray.() -> Unit
+) {
+    val a = context.theme.obtainStyledAttributes(set, attrs, 0, 0)
+    try {
+        a.func()
+    } finally {
+        a.recycle()
+    }
+}
+
+fun View.isEventWithinBounds(event: MotionEvent): Boolean =
+    event.x in 0f..width.toFloat() && event.y in 0f..height.toFloat()
