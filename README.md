@@ -33,13 +33,12 @@ In lieu of this, we decided to introduce "compat" version of all our views which
 # PopLayout
 ![Configs](https://user-images.githubusercontent.com/9965653/173539706-fa521743-b214-4372-87dd-799d9b8b6c70.png)
 `PopFrameLayout` render 5 surfaces, top, left, right, bottom and center.
+These surfaces can be customized in two ways:
 
 ## Elevated
 ![Elevated](https://user-images.githubusercontent.com/9965653/172596228-1bcb92d0-d293-4290-ac38-b9a693a2fab2.png "Elevated Button")
 
-
-These surfaces can be customized in two ways:
-1. By specifying the button position as `bottom|right`, neopop will compute bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to button_position
+By specifying the button position as `bottom|right`, neopop will compute bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to button_position
 ```xml  
 <club.cred.neopop.PopFrameLayout  
 	... 
@@ -52,8 +51,8 @@ These surfaces can be customized in two ways:
 
 ## Flat
 ![Flat](https://user-images.githubusercontent.com/9965653/172597180-63b4c386-9b7c-4211-a64c-a79892232481.png "Flat Button")
-2.  By specifying the button position as `center`, neopop will compute right and bottom surface's color according to `neopop_center_surface_color`   .
-    Top and left surface's color is computed wrt `neopop_parent_view_color` and `neopop_grandparent_view_color`
+By specifying the button position as `center`, neopop will compute right and bottom surface's color according to `neopop_center_surface_color`.
+Top and left surface's color is computed wrt `neopop_parent_view_color` and `neopop_grandparent_view_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout
 	 ...  
@@ -90,7 +89,6 @@ To render stroke on a flat button, add `neopop_stroke_color`
 ## Plunk Strokes
 
 ![Elevated Strokes](https://user-images.githubusercontent.com/9965653/172597473-630c86b9-574d-4f65-afeb-171c5ec147cc.png "Elevated Strokes")
-
 To render strokes on an elevated/plunk button , add
 `neopop_is_stroked_button = "true"` and `neopop_stroke_color`
 ```xml  
