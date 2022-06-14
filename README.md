@@ -31,8 +31,7 @@ The issue below API 28, is, to make `BlurMaskFilter` work, we need to use [hardw
 In lieu of this, we decided to introduce "compat" version of all our views which render a simple single colored background on the view on devices below API 28.
 
 # PopLayout
-![CenterBottomRight](https://user-images.githubusercontent.com/9965653/172595452-1b642929-8593-4e8a-a986-b7becb5e7540.png)
-![CenterTopLeft](https://user-images.githubusercontent.com/9965653/172595661-f77581e8-415d-4b0a-856a-295829d2107c.png)
+![Configs](https://user-images.githubusercontent.com/9965653/173539706-fa521743-b214-4372-87dd-799d9b8b6c70.png)
 `PopFrameLayout` render 5 surfaces, top, left, right, bottom and center.
 
 ## Elevated
