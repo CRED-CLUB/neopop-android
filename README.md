@@ -13,7 +13,8 @@ You can install cheesecake  by adding this to your build.gradle file:
 
 ```  
 dependencies {  
- implementation 'club.cred.android:synth:1.0.0'}  
+ implementation 'club.cred.android:synth:1.0.0'
+ }  
 ```  
 
 ## Usage & SDK Limitations
@@ -288,16 +289,17 @@ To render strokes on an elevated button ,add
 ##  Floating
 ![Non Floating](https://user-images.githubusercontent.com/9965653/172599406-6da2d3a4-06ff-4a74-bd6a-988b36a59159.png "Floating")
 
-2. By specifying a complete appearance for all aspects of the flat surface
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout  
- ....     android:clickable="true"    
+     ....     
+     android:clickable="true"    
      app:neopop_parentViewColor="@color/black"    
      app:neopop_black_shadow_height="15dp"    
      app:neopop_black_shadow_top_padding="0dp"    
      app:neopop_card_rotation="18.8"    
      app:neopop_gravity="on_space"  
- app:neopop_shadow_rotation="32"     app:neopop_show_shimmer="false"/>  
+     app:neopop_shadow_rotation="32"     
+     app:neopop_show_shimmer="false"/>  
 ```  
 
 ## Strokes
@@ -306,7 +308,6 @@ To render strokes on an elevated button ,add
 
 ![Drawable Button](https://i.imgur.com/Bnjb5Cj.png "Drawable Button")
 
-2. By specifying a complete appearance for all aspects of the icon pit
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout    
   ...  
