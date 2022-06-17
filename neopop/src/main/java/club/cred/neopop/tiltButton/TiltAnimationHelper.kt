@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.core.animation.doOnEnd
 import androidx.core.view.forEach
 import club.cred.neopop.TiltFrameLayout
-import club.cred.neopop.common.PopButtonAnimationListener
 import club.cred.neopop.common.areSystemAnimationsEnabled
 import club.cred.neopop.common.isEventWithinBounds
 import club.cred.neopop.common.provideSafeHapticFeedback
@@ -25,7 +24,6 @@ class TiltAnimationHelper(private val tiltLayout: TiltFrameLayout) {
     private var state = TiltAnimationState()
     private var previousAnimationValue: Int = 0
     private var shouldPerformClick = false
-    private val popButtonAnimationListeners = ArrayList<PopButtonAnimationListener>()
     private val isFloating: Boolean
         get() = tiltLayout.gravity == NeoPopGravity.ON_SPACE
 
@@ -228,19 +226,8 @@ class TiltAnimationHelper(private val tiltLayout: TiltFrameLayout) {
 
     fun clear() {
         animator.removeAllUpdateListeners()
-        popButtonAnimationListeners.clear()
         animator.removeAllListeners()
         animator.cancel()
-    }
-
-    fun addPopButtonAnimationListener(listener: PopButtonAnimationListener) {
-        popButtonAnimationListeners.add(listener)
-    }
-
-    fun removePopButtonAnimationListener(listener: PopButtonAnimationListener) {
-        if (popButtonAnimationListeners.contains(listener)) {
-            popButtonAnimationListeners.remove(listener)
-        }
     }
 
     companion object {
