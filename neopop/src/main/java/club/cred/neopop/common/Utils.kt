@@ -33,19 +33,6 @@ import kotlin.reflect.KProperty
 const val SHIMMER_ANIMATION_DURATION = 1500L
 private const val EXIT_FADE_DURATION = 400
 
-internal inline fun View.withAttrs(
-    set: AttributeSet?,
-    attrs: IntArray,
-    func: TypedArray.() -> Unit
-) {
-    val a = context.theme.obtainStyledAttributes(set, attrs, 0, 0)
-    try {
-        a.func()
-    } finally {
-        a.recycle()
-    }
-}
-
 internal inline fun <T> View.dynamicAttr(
     initialValue: T,
     crossinline onChange: (T) -> Unit = {}
@@ -127,9 +114,6 @@ fun Context.areSystemAnimationsEnabled(): Boolean =
 
 fun Context.getSystemAnimatorScale(): Float =
     Settings.Global.getFloat(contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, 1f)
-
-fun View.isEventWithinBounds(event: MotionEvent): Boolean =
-    event.x in 0f..width.toFloat() && event.y in 0f..height.toFloat()
 
 fun Animator.resumeOrStart() {
     if (isPaused) resume() else start()
