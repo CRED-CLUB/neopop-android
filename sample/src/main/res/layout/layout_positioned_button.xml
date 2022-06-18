@@ -27,10 +27,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -47,10 +44,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -66,10 +60,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -85,10 +76,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -103,10 +91,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -122,10 +107,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -141,10 +123,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -161,10 +140,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <club.cred.neopop.PopFrameLayout
@@ -182,10 +158,7 @@
             android:layout_width="28dp"
             android:layout_height="12dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_button_text_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/center_bottom" />
+            android:src="@drawable/ic_button_text_white" />
     </club.cred.neopop.PopFrameLayout>
 
     <ImageView
