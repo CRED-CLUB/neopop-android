@@ -32,8 +32,10 @@ internal class TiltGeometry(
     private val gravity = data.gravity
     private val shimmerWidth = data.shimmerWidth
     private val shadowHeight: Float = data.shadowHeight
-    private val centerSurfaceMovePath = getMovePath(data.centerSurfaceRotation.toDouble(), size.height)
-    private val bottomSurfaceMovePath = getMovePath(data.bottomSurfaceRotation.toDouble(), totalDepth.toInt())
+    private val centerSurfaceMovePath =
+        getMovePath(data.centerSurfaceRotation.toDouble(), size.height)
+    private val bottomSurfaceMovePath =
+        getMovePath(data.bottomSurfaceRotation.toDouble(), totalDepth.toInt())
     private val shadowDeltaHeight = shadowHeight
     private val bottomSpacing =
         if (gravity == NeoPopGravity.ON_GROUND) {
@@ -151,8 +153,8 @@ internal class TiltGeometry(
             ),
             leftBottom = PointF(
                 bigShimmerBottomPlane.leftBottom.x -
-                    (shimmerWidth * SMALL_SHIMMER_WIDTH_PERCENTAGE).toInt() -
-                    (shimmerWidth * SHIMMER_SPACING_PERCENTAGE).toInt(),
+                        (shimmerWidth * SMALL_SHIMMER_WIDTH_PERCENTAGE).toInt() -
+                        (shimmerWidth * SHIMMER_SPACING_PERCENTAGE).toInt(),
                 bigShimmerBottomPlane.leftBottom.y
             )
         )

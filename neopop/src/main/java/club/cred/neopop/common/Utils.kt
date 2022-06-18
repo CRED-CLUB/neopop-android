@@ -16,14 +16,11 @@ import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.res.Resources
-import android.content.res.TypedArray
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.provider.Settings
-import android.util.AttributeSet
 import android.util.TypedValue
-import android.view.MotionEvent
 import android.view.View
 import kotlin.math.tan
 import kotlin.properties.ObservableProperty

@@ -120,8 +120,8 @@ class TiltAnimationHelper(private val tiltLayout: TiltFrameLayout) {
         val animatedValue = value * tiltLayout.depth
         val blackShadowTranslationLength =
             tiltLayout.shadowHeight -
-                tiltLayout.shadowTopMargin -
-                tiltLayout.depth
+                    tiltLayout.shadowTopMargin -
+                    tiltLayout.depth
 
         val blackShadowAnimatedValue = value * blackShadowTranslationLength
 

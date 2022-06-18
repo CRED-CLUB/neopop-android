@@ -76,7 +76,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     private var onLayoutCalled = false
 
     /**
-     padding between shadow and button while floating
+    padding between shadow and button while floating
      **/
     internal var shadowTopMargin = 0.dp
     internal var shadowHeight = 0.dp

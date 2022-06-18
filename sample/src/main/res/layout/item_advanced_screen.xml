@@ -53,8 +53,8 @@
         android:id="@+id/aligned_buttons"
         layout="@layout/layout_adjacent_buttons"
         android:layout_width="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/positioned_buttons"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/positioned_buttons"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/guideline_middle" />

@@ -198,9 +198,9 @@ internal class TiltDrawable(
 
     override fun onStateChange(state: IntArray?): Boolean {
         val isDrawableEnabled = !(
-            state?.contains(-android.R.attr.state_enabled) == true ||
-                state?.contains(android.R.attr.state_enabled) == false
-            )
+                state?.contains(-android.R.attr.state_enabled) == true ||
+                        state?.contains(android.R.attr.state_enabled) == false
+                )
         val isUpdated = shimmerAnimationHelper.isDrawableEnabled != isDrawableEnabled
         shimmerAnimationHelper.isDrawableEnabled = isDrawableEnabled
         return isUpdated

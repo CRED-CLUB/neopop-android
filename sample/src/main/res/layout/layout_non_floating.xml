@@ -2,9 +2,9 @@
 <club.cred.neopop.TiltFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/TiltNonFloatingButton"
+    android:layout_width="match_parent"
     android:clickable="true"
-    app:neopop_center_surface_color="@color/white"
-    android:layout_width="match_parent">
+    app:neopop_center_surface_color="@color/white">
 
     <ImageView
         android:layout_width="79dp"
