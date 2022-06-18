@@ -45,5 +45,5 @@ internal inline fun View.withAttrs(
     }
 }
 
-fun View.isEventWithinBounds(event: MotionEvent): Boolean =
+internal fun View.isEventWithinBounds(event: MotionEvent): Boolean =
     event.x in 0f..width.toFloat() && event.y in 0f..height.toFloat()
