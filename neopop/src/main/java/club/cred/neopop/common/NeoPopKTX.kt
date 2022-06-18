@@ -4,7 +4,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Path
 
-fun Canvas.translateWith(dx: Float, dy: Float, block: () -> Unit) {
+inline fun Canvas.translateWith(dx: Float, dy: Float, block: () -> Unit) {
     translate(dx, dy)
     block()
     translate(-dx, -dy)

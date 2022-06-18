@@ -263,7 +263,7 @@ internal class PopDrawable(
         return true
     }
 
-    private fun Canvas.clipPop(block: Canvas.() -> Unit) {
+    private inline fun Canvas.clipPop(crossinline block: Canvas.() -> Unit) {
         if (neoPopGeometry.clipPath != null) {
             translateWith(
                 neoPopGeometry.viewBoundRect.left.toFloat(),
