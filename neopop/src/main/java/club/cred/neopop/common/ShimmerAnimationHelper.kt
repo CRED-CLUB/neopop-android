@@ -33,7 +33,6 @@ class ShimmerAnimationHelper(
 
     fun startShimmer() {
         if (!isShimmerAnimating && width > 0 && isDrawableEnabled) {
-            shimmerAnimator.removeAllUpdateListeners()
             shimmerAnimator.apply {
                 removeListeners()
                 startDelay = this@ShimmerAnimationHelper.startDelay

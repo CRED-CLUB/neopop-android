@@ -78,7 +78,7 @@ internal fun createCheckableSelector(
     return res
 }
 
-internal fun getFillPaint(paintColor: Int) =
+internal fun createFillPaint(paintColor: Int) =
     Paint().apply {
         style = Paint.Style.FILL
         this.color = paintColor

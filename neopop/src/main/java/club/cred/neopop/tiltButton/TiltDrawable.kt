@@ -27,7 +27,7 @@ internal class TiltDrawable(
             shadowPaint.color = tiltStyle.shadowColor
             shimmerPaint.color = tiltStyle.shimmerColor
             bottomShimmerPaint.color = tiltStyle.bottomShimmerColor
-            strokePaint = getStrokePaint(tiltStyle.strokeColor)
+            strokePaint = createStrokePaint(tiltStyle.strokeColor)
             shimmerAnimationHelper.repeatDelay = tiltStyle.shimmerRepeatDelay
             shimmerAnimationHelper.startDelay = tiltStyle.shimmerStartDelay
             invalidateSelf()
@@ -45,7 +45,7 @@ internal class TiltDrawable(
     private var shadowPaint: Paint = getFillPaint(Color.BLACK)
     private var shimmerPaint: Paint = getFillPaint(tiltStyle.shimmerColor)
     private var bottomShimmerPaint: Paint = getFillPaint(tiltStyle.bottomShimmerColor)
-    private var strokePaint: Paint = getStrokePaint(tiltStyle.strokeColor)
+    private var strokePaint: Paint = createStrokePaint(tiltStyle.strokeColor)
 
     private lateinit var neoPopGeometry: TiltGeometry
 
@@ -88,7 +88,7 @@ internal class TiltDrawable(
             isDither = true
         }
 
-    private fun getStrokePaint(strokeColor: Int): Paint = Paint().apply {
+    private fun createStrokePaint(strokeColor: Int): Paint = Paint().apply {
         color = strokeColor
         style = Paint.Style.STROKE
         strokeWidth = tiltStyle.strokeWidth
