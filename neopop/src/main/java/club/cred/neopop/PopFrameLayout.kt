@@ -10,7 +10,6 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.forEach
-import club.cred.neopop.common.PopButtonAnimationListener
 import club.cred.neopop.common.SHIMMER_ANIMATION_DURATION
 import club.cred.neopop.common.dp
 import club.cred.neopop.common.dynamicAttr
@@ -134,7 +133,6 @@ open class PopFrameLayout @JvmOverloads constructor(
         }
     }
 
-    private val popButtonAnimationListeners = ArrayList<PopButtonAnimationListener>()
     private var shouldPerformClick = false
     private var previousAnimationValue: Int = 0
     private var animateOnTouch: Boolean = false
@@ -495,19 +493,5 @@ open class PopFrameLayout @JvmOverloads constructor(
         return this@PopFrameLayout.dynamicAttr(initialValue) {
             onChange(it)
         }
-    }
-
-    fun addPopButtonAnimationListener(listener: PopButtonAnimationListener) {
-        popButtonAnimationListeners.add(listener)
-    }
-
-    fun removePopButtonAnimationListener(listener: PopButtonAnimationListener) {
-        if (popButtonAnimationListeners.contains(listener)) {
-            popButtonAnimationListeners.remove(listener)
-        }
-    }
-
-    fun removeAllPopButtonAnimationListeners() {
-        popButtonAnimationListeners.clear()
     }
 }
