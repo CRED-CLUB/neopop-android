@@ -3,5 +3,6 @@
     <dimen name="dp_10">10dp</dimen>
     <dimen name="container_spacing_top">60dp</dimen>
     <dimen name="container_spacing_bottom">120dp</dimen>
+    <dimen name="sp_9">9sp</dimen>
 
 </resources>
