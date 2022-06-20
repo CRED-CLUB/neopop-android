@@ -1,3 +1,15 @@
+/*
+ *
+ *  * Copyright 2022 Dreamplug Technologies Private Limited
+ *  * Licensed under the Apache License, Version 2.0 (the “License”);
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *     http://www.apache.org/licenses/LICENSE-2.0
+ *  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and limitations under the License.
+ *
+ */
+
 package club.cred.neopop.tiltButton
 
 import android.graphics.Canvas
@@ -27,7 +39,7 @@ internal class TiltDrawable(
             shadowPaint.color = tiltStyle.shadowColor
             shimmerPaint.color = tiltStyle.shimmerColor
             bottomShimmerPaint.color = tiltStyle.bottomShimmerColor
-            strokePaint = getStrokePaint(tiltStyle.strokeColor)
+            strokePaint = createStrokePaint(tiltStyle.strokeColor)
             shimmerAnimationHelper.repeatDelay = tiltStyle.shimmerRepeatDelay
             shimmerAnimationHelper.startDelay = tiltStyle.shimmerStartDelay
             invalidateSelf()
@@ -45,7 +57,7 @@ internal class TiltDrawable(
     private var shadowPaint: Paint = getFillPaint(Color.BLACK)
     private var shimmerPaint: Paint = getFillPaint(tiltStyle.shimmerColor)
     private var bottomShimmerPaint: Paint = getFillPaint(tiltStyle.bottomShimmerColor)
-    private var strokePaint: Paint = getStrokePaint(tiltStyle.strokeColor)
+    private var strokePaint: Paint = createStrokePaint(tiltStyle.strokeColor)
 
     private lateinit var neoPopGeometry: TiltGeometry
 
@@ -88,7 +100,7 @@ internal class TiltDrawable(
             isDither = true
         }
 
-    private fun getStrokePaint(strokeColor: Int): Paint = Paint().apply {
+    private fun createStrokePaint(strokeColor: Int): Paint = Paint().apply {
         color = strokeColor
         style = Paint.Style.STROKE
         strokeWidth = tiltStyle.strokeWidth
@@ -148,7 +160,7 @@ internal class TiltDrawable(
         }
     }
 
-    private fun Canvas.clipPop(block: () -> Unit) {
+    private inline fun Canvas.clipPop(block: () -> Unit) {
         if (tiltStyle.hasShimmer && isShimmerAnimating) {
             translateWith(dx, dy) {
                 clipPath(neoPopGeometry.clipPath.fullOutline)
@@ -186,9 +198,9 @@ internal class TiltDrawable(
 
     override fun onStateChange(state: IntArray?): Boolean {
         val isDrawableEnabled = !(
-            state?.contains(-android.R.attr.state_enabled) == true ||
-                state?.contains(android.R.attr.state_enabled) == false
-            )
+                state?.contains(-android.R.attr.state_enabled) == true ||
+                        state?.contains(android.R.attr.state_enabled) == false
+                )
         val isUpdated = shimmerAnimationHelper.isDrawableEnabled != isDrawableEnabled
         shimmerAnimationHelper.isDrawableEnabled = isDrawableEnabled
         return isUpdated

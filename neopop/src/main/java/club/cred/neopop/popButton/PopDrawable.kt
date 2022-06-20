@@ -1,3 +1,15 @@
+/*
+ *
+ *  * Copyright 2022 Dreamplug Technologies Private Limited
+ *  * Licensed under the Apache License, Version 2.0 (the “License”);
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *     http://www.apache.org/licenses/LICENSE-2.0
+ *  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and limitations under the License.
+ *
+ */
+
 package club.cred.neopop.popButton
 
 import android.graphics.Canvas
@@ -10,11 +22,11 @@ import android.graphics.drawable.Drawable
 import android.util.Size
 import androidx.core.graphics.withClip
 import club.cred.neopop.common.NeoButtonDrawableInteractor
+import club.cred.neopop.common.ShimmerAnimationHelper
+import club.cred.neopop.common.createFillPaint
 import club.cred.neopop.common.drawStroke
-import club.cred.neopop.common.getFillPaint
 import club.cred.neopop.common.translateWith
 import club.cred.neopop.popButton.NeoPopGeometry.Companion.DEFAULT_STROKE_WIDTH
-import club.cred.neopop.common.ShimmerAnimationHelper
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -41,17 +53,17 @@ internal class PopDrawable(
     internal val isShimmerAnimating: Boolean
         get() = shimmerAnimationHelper.isShimmerAnimating
 
-    private val topShadowPaint = getFillPaint(popStyleData.topSurfaceColor)
-    private val leftShadowPaint = getFillPaint(popStyleData.leftSurfaceColor)
-    private val bottomShadowPaint = getFillPaint(popStyleData.bottomSurfaceColor)
-    private val rightShadowPaint = getFillPaint(popStyleData.rightSurfaceColor)
-    private val centerCardPaint = getFillPaint(popStyleData.centerSurfaceColor)
+    private val topShadowPaint = createFillPaint(popStyleData.topSurfaceColor)
+    private val leftShadowPaint = createFillPaint(popStyleData.leftSurfaceColor)
+    private val bottomShadowPaint = createFillPaint(popStyleData.bottomSurfaceColor)
+    private val rightShadowPaint = createFillPaint(popStyleData.rightSurfaceColor)
+    private val centerCardPaint = createFillPaint(popStyleData.centerSurfaceColor)
     private val shimmerColor =
-        getFillPaint(popStyleData.shimmerColor).apply {
+        createFillPaint(popStyleData.shimmerColor).apply {
             isAntiAlias = true
         }
 
-    private fun getStrokePaint(strokeColor: Int): Paint = Paint().apply {
+    private fun createStrokePaint(strokeColor: Int): Paint = Paint().apply {
         color = strokeColor
         strokeWidth = DEFAULT_STROKE_WIDTH
     }
@@ -155,12 +167,12 @@ internal class PopDrawable(
     private fun drawConstantEdges(canvas: Canvas) {
         popStyleData.surfaceStrokeColors?.rightSurfaceStrokeColors?.rightColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke5, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke5, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.bottomSurfaceStrokeColors?.bottomColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke6, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke6, createStrokePaint(it))
         }
     }
 
@@ -189,22 +201,22 @@ internal class PopDrawable(
 
     private fun drawEdges(canvas: Canvas) {
         val slantedLineStrokeWidth = (DEFAULT_STROKE_WIDTH * (1 - pressFraction)) +
-            (pressFraction * DEFAULT_STROKE_WIDTH / SQRT_2)
+                (pressFraction * DEFAULT_STROKE_WIDTH / SQRT_2)
         val slantedLineStrokeWidthSqrt = slantedLineStrokeWidth / (SQRT_2 * 2)
 
         popStyleData.surfaceStrokeColors?.centerSurfaceStrokeColors?.bottomColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke1, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke1, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.centerSurfaceStrokeColors?.rightColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke2, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke2, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.centerSurfaceStrokeColors?.topColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke3, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke3, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.rightSurfaceStrokeColors?.topColor?.let {
@@ -223,12 +235,12 @@ internal class PopDrawable(
 
         popStyleData.surfaceStrokeColors?.rightSurfaceStrokeColors?.rightColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke5, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke5, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.bottomSurfaceStrokeColors?.bottomColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke6, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke6, createStrokePaint(it))
         }
 
         popStyleData.surfaceStrokeColors?.bottomSurfaceStrokeColors?.leftColor?.let {
@@ -247,15 +259,15 @@ internal class PopDrawable(
 
         popStyleData.surfaceStrokeColors?.centerSurfaceStrokeColors?.leftColor?.let {
             if (it != Int.MIN_VALUE)
-                canvas.drawStroke(neoPopGeometry.stroke8, getStrokePaint(it))
+                canvas.drawStroke(neoPopGeometry.stroke8, createStrokePaint(it))
         }
     }
 
     override fun onStateChange(state: IntArray?): Boolean {
         isDrawableEnabled = !(
-            state?.contains(-android.R.attr.state_enabled) == true ||
-                state?.contains(android.R.attr.state_enabled) == false
-            )
+                state?.contains(-android.R.attr.state_enabled) == true ||
+                        state?.contains(android.R.attr.state_enabled) == false
+                )
         return super.onStateChange(state)
     }
 
@@ -263,7 +275,7 @@ internal class PopDrawable(
         return true
     }
 
-    private fun Canvas.clipPop(block: Canvas.() -> Unit) {
+    private inline fun Canvas.clipPop(crossinline block: Canvas.() -> Unit) {
         if (neoPopGeometry.clipPath != null) {
             translateWith(
                 neoPopGeometry.viewBoundRect.left.toFloat(),
