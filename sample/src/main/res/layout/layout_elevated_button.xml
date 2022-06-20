@@ -5,8 +5,8 @@
     android:clickable="true">
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="10.5dp"
+        android:layout_width="42dp"
+        android:layout_height="14dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_pay_now_no_arrow_black" />
 
