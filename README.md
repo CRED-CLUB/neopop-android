@@ -107,7 +107,7 @@ To render strokes on an elevated button ,add
 
 ## Adjacent Buttons
 
-###Horizontally aligned buttons
+### Horizontally aligned buttons
 
 ![Adjacent Buttons](https://user-images.githubusercontent.com/9965653/174827283-4ae73c48-eba8-41ce-9661-30924aef2d3c.png)
 ```xml  
