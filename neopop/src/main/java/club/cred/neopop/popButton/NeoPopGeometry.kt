@@ -164,12 +164,19 @@ class NeoPopGeometry(
         leftBottom = topPlane.rightBottom
     )
 
+    /**
+     * center surface, bottom stroke
+     */
     val stroke1 by lazy {
         Stroke(
             PointF(topPlane.leftBottom.x, topPlane.leftBottom.y.minus(DEFAULT_STROKE_WIDTH / 2)),
             PointF(topPlane.rightBottom.x, topPlane.rightBottom.y.minus(DEFAULT_STROKE_WIDTH / 2))
         )
     }
+
+    /**
+     * center surface, right stroke
+     */
     val stroke2 by lazy {
         Stroke(
             PointF(topPlane.rightBottom.x.minus(DEFAULT_STROKE_WIDTH / 2), topPlane.rightBottom.y),
@@ -177,6 +184,9 @@ class NeoPopGeometry(
         )
     }
 
+    /**
+     * center surface, top stroke
+     */
     val stroke3 by lazy {
         Stroke(
             PointF(topPlane.rightTop.x, topPlane.rightTop.y.plus(DEFAULT_STROKE_WIDTH / 2)),
@@ -186,6 +196,9 @@ class NeoPopGeometry(
 
     val stroke4 by lazy { Stroke(PointF(0f, 0f), PointF(0f, 0f)) }
 
+    /**
+     * right surface, right stroke
+     */
     val stroke5 by lazy {
         Stroke(
             PointF(endShadow.rightTop.x.minus(DEFAULT_STROKE_WIDTH / 2), endShadow.rightTop.y),
@@ -193,6 +206,9 @@ class NeoPopGeometry(
         )
     }
 
+    /**
+     * bottom surface, bottom stroke
+     */
     val stroke6 by lazy {
         Stroke(
             PointF(
@@ -213,6 +229,9 @@ class NeoPopGeometry(
         )
     }
 
+    /**
+     * center surface, left stroke
+     */
     val stroke8 by lazy {
         Stroke(
             PointF(topPlane.leftBottom.x.plus(DEFAULT_STROKE_WIDTH / 2), topPlane.leftBottom.y),

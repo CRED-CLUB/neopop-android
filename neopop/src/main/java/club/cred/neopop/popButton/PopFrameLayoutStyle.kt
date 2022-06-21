@@ -121,6 +121,9 @@ data class SurfaceStrokeColorData(
     val centerSurfaceStrokeColors: SurfaceStrokeColors? = null
 )
 
+/**
+ * stroke / border colors for a surface
+ */
 data class SurfaceStrokeColors(
     val bottomColor: Int? = null,
     val topColor: Int? = null,
