@@ -106,48 +106,65 @@ To render strokes on an elevated button ,add
 ```  
 
 ## Adjacent Buttons
+
+###Horizontally aligned buttons
 ```xml  
-<androidx.constraintlayout.widget.ConstraintLayout    
-  android:layout_width="match_parent"    
-  android:layout_height="200dp"    
-  android:background="@color/white">    
+  <Space
+        android:id="@+id/left_space"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/center_top"
+        app:layout_constraintTop_toTopOf="parent" />
     
-    <club.cred.neopop.PopFrameLayout    
-     android:id="@+id/b2"      
-     android:clickable="true"    
-     app:layout_constraintEnd_toEndOf="@id/view"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:layout_constraintBottom_toBottomOf="parent"    
-     app:neopop_button_position="center"    
-     app:neopop_draw_full_height="true"    
-     app:neopop_button_on_right="@id/b1"    
-     app:neopop_draw_full_width="true"    
-     app:neopop_center_surface_color="@color/black"    
-     app:neopop_parent_view_color="@color/white">  
- ...content    </club.cred.neopop.PopFrameLayout>    
-      
-    <View  android:id="@+id/view"    
-     android:layout_width="3dp"    
-     android:layout_height="0dp"    
-     app:layout_constraintStart_toStartOf="@id/b1"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:layout_constraintBottom_toBottomOf="parent"/>    
-       
-    <club.cred.neopop.PopFrameLayout    
-     android:id="@+id/b1"    
-     android:clickable="true"    
-     app:neopop_button_on_left="@id/b2"    
-     app:layout_constraintBottom_toBottomOf="parent"    
-     app:layout_constraintEnd_toEndOf="parent"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:neopop_button_position="center"    
-     app:neopop_draw_full_height="true"    
-     app:neopop_draw_full_width="true"    
-     app:neopop_center_surface_color="#f00"    
-     app:neopop_parent_view_color="@color/white">    
-     ...content  
- </club.cred.neopop.PopFrameLayout> </androidx.constraintlayout.widget.ConstraintLayout>  
+
+    <club.cred.neopop.PopFrameLayout
+        android:id="@+id/left_top"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@id/left_space"
+        app:layout_constraintTop_toTopOf="@id/center_top"
+        app:neopop_button_on_right="@id/center_top">
+        
+    </club.cred.neopop.PopFrameLayout>
+
+
+    <club.cred.neopop.PopFrameLayout
+        android:id="@+id/center_top"
+        android:clickable="true"
+        app:neopop_button_on_left="@id/left_top"
+        app:neopop_center_surface_color="@color/white">
+        
+    </club.cred.neopop.PopFrameLayout>
 ```  
+### Vertically Aligned buttons
+```xml 
+<Space
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/right_top" />
+
+
+    <club.cred.neopop.PopFrameLayout
+        android:id="@+id/right_top"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/right_bottom"
+        app:neopop_button_on_bottom="@id/right_bottom">
+        ..content
+    </club.cred.neopop.PopFrameLayout>
+
+
+    <club.cred.neopop.PopFrameLayout
+        android:id="@+id/right_bottom"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="@id/bottom_space"
+        app:neopop_button_on_top="@id/right_top">
+        ...content
+    </club.cred.neopop.PopFrameLayout>
+
+```
+
+
 ## PopLayout All configs
 ```xml  
 <club.cred.neopop.PopFrameLayout    
