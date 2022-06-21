@@ -15,6 +15,8 @@ package club.cred.neopop.common
 import android.graphics.Path
 import android.graphics.PointF
 
+// Classes to hold shape related data
+
 data class Quadrilateral(
     val leftTop: PointF,
     val rightTop: PointF,
