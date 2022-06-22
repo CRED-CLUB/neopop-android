@@ -3,33 +3,18 @@ NeoPop is CRED's inbuilt library for using NeoPop components in your app.
 
 What really is NeoPop? NeoPop was created with one simple goal, to create the next generation of the next beautiful, more affirmative, design system. neopop stays true to everything that design at CRED stands for.
 
-[blog if any]
 
 ![Banner](https://i.imgur.com/1gN3wzy.jpg "Banner")
 
-CREATIVE
+
 ## Install
-You can install cheesecake  by adding this to your build.gradle file:
+You can install NeoPop  by adding this to your build.gradle file:
 
 ```  
 dependencies {  
- implementation 'club.cred.android:synth:1.0.0'
+ implementation 'club.cred.android:neopop:1.0.0'
  }  
 ```  
-
-## Usage & SDK Limitations
-
-To use synth, the parent layout which contains the synth views must specify:
-
-```xml  
-android:clipChildren="false"  
-```  
-
-Synth renders neumorphic components only on devices running API 28 (Pie) or later. This is because Synth internally uses [`BlurMaskFilter`](https://developer.android.com/reference/android/graphics/BlurMaskFilter) to render shadows and highlights which are drawn outside of the view bounds — this allows you to align Synth views with other views easily.
-
-The issue below API 28, is, to make `BlurMaskFilter` work, we need to use [hardware acceleration](https://developer.android.com/guide/topics/graphics/hardware-accel) on the view which causes the shadows and highlights to be clipped. We could solve for this by adding padding to the views (similar to how CardView does it) but chose not to because of alignment issues.
-
-In lieu of this, we decided to introduce "compat" version of all our views which render a simple single colored background on the view on devices below API 28.
 
 # PopLayout
 ![Configs](https://user-images.githubusercontent.com/9965653/173539706-fa521743-b214-4372-87dd-799d9b8b6c70.png)
@@ -106,48 +91,70 @@ To render strokes on an elevated button ,add
 ```  
 
 ## Adjacent Buttons
+
+![Adjacent Buttons](https://user-images.githubusercontent.com/9965653/174827283-4ae73c48-eba8-41ce-9661-30924aef2d3c.png)
+
+### Horizontally aligned buttons
+
 ```xml  
-<androidx.constraintlayout.widget.ConstraintLayout    
-  android:layout_width="match_parent"    
-  android:layout_height="200dp"    
-  android:background="@color/white">    
+  <Space
+        android:id="@+id/left_space"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/center_top"
+        app:layout_constraintTop_toTopOf="parent" />
     
-    <club.cred.neopop.PopFrameLayout    
-     android:id="@+id/b2"      
-     android:clickable="true"    
-     app:layout_constraintEnd_toEndOf="@id/view"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:layout_constraintBottom_toBottomOf="parent"    
-     app:neopop_button_position="center"    
-     app:neopop_draw_full_height="true"    
-     app:neopop_button_on_right="@id/b1"    
-     app:neopop_draw_full_width="true"    
-     app:neopop_center_surface_color="@color/black"    
-     app:neopop_parent_view_color="@color/white">  
- ...content    </club.cred.neopop.PopFrameLayout>    
-      
-    <View  android:id="@+id/view"    
-     android:layout_width="3dp"    
-     android:layout_height="0dp"    
-     app:layout_constraintStart_toStartOf="@id/b1"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:layout_constraintBottom_toBottomOf="parent"/>    
-       
-    <club.cred.neopop.PopFrameLayout    
-     android:id="@+id/b1"    
-     android:clickable="true"    
-     app:neopop_button_on_left="@id/b2"    
-     app:layout_constraintBottom_toBottomOf="parent"    
-     app:layout_constraintEnd_toEndOf="parent"    
-     app:layout_constraintTop_toTopOf="parent"    
-     app:neopop_button_position="center"    
-     app:neopop_draw_full_height="true"    
-     app:neopop_draw_full_width="true"    
-     app:neopop_center_surface_color="#f00"    
-     app:neopop_parent_view_color="@color/white">    
-     ...content  
- </club.cred.neopop.PopFrameLayout> </androidx.constraintlayout.widget.ConstraintLayout>  
+
+    <club.cred.neopop.PopFrameLayout
+	...
+        android:id="@+id/left_top"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="@id/left_space"
+        app:layout_constraintTop_toTopOf="@id/center_top"
+        app:neopop_button_on_right="@id/center_top">
+        ...content
+    </club.cred.neopop.PopFrameLayout>
+
+
+    <club.cred.neopop.PopFrameLayout
+	...
+        android:id="@+id/center_top"
+        android:clickable="true"
+        app:neopop_button_on_left="@id/left_top"
+        app:neopop_center_surface_color="@color/white">
+        ...content
+    </club.cred.neopop.PopFrameLayout>
 ```  
+### Vertically Aligned buttons
+```xml 
+  <Space
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/right_top" />
+
+    <club.cred.neopop.PopFrameLayout
+	...
+        android:id="@+id/right_top"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/right_bottom"
+        app:neopop_button_on_bottom="@id/right_bottom">
+        ..content
+    </club.cred.neopop.PopFrameLayout>
+
+    <club.cred.neopop.PopFrameLayout
+	...
+        android:id="@+id/right_bottom"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="@id/bottom_space"
+        app:neopop_button_on_top="@id/right_top">
+        ...content
+    </club.cred.neopop.PopFrameLayout>
+
+```
+
+
 ## PopLayout All configs
 ```xml  
 <club.cred.neopop.PopFrameLayout    
@@ -358,7 +365,7 @@ Pull requests are welcome! We'd love help improving this library. Feel free to b
 
 ## Contributors
 
-Synth would not have been possible if not for the contributions made by CRED's design and frontend teams. Specifically:
+NeoPop would not have been possible if not for the contributions made by CRED's design and frontend teams. Specifically:
 - Rishab Singh Bisht — [Twitter](https://twitter.com/rishabh1310) | [Github](https://github.com/rishabhsinghbisht) | [Linkedin](https://www.linkedin.com/in/rishabh-singh-bisht-b7550938/)
 - Nikhil Panju — [Twitter](https://twitter.com/nikhilpanju) | [Github](https://github.com/nikhilpanju) | [Linkedin](https://www.linkedin.com/in/nikhilpanju/)
 - Ayush Bansal — [Twitter](https://twitter.com/scorpio002) | [Github](https://github.com/bansalayush) | [Linkedin](https://www.linkedin.com/in/ayush-bansal-81861578/)

@@ -49,8 +49,6 @@
         app:layout_constraintEnd_toEndOf="@id/left_space"
         app:layout_constraintTop_toTopOf="@id/center_top"
         app:neopop_button_on_right="@id/center_top"
-        app:neopop_draw_full_height="true"
-        app:neopop_draw_full_width="true"
         app:neopop_grandparent_view_color="@color/black"
         app:neopop_parent_view_color="@color/black">
 
@@ -79,8 +77,6 @@
         app:layout_constraintTop_toTopOf="@+id/right_top"
         app:neopop_button_on_left="@id/left_top"
         app:neopop_center_surface_color="@color/white"
-        app:neopop_draw_full_height="true"
-        app:neopop_draw_full_width="true"
         app:neopop_grandparent_view_color="@color/black"
         app:neopop_parent_view_color="@color/black">
 
@@ -105,10 +101,10 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:clickable="true"
+        app:neopop_button_on_bottom="@id/right_bottom"
         app:layout_constraintBottom_toTopOf="@+id/right_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ttl"
-        app:neopop_button_on_left="@id/center_top">
+        app:layout_constraintTop_toBottomOf="@+id/ttl">
 
         <TextView
             android:layout_width="wrap_content"
