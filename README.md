@@ -23,6 +23,7 @@ These surfaces can be customized in two ways:
 
 ## Elevated
 ![Elevated](https://user-images.githubusercontent.com/9965653/172596228-1bcb92d0-d293-4290-ac38-b9a693a2fab2.png "Elevated Button")
+![elevated](https://user-images.githubusercontent.com/9965653/175874614-ab316981-29d1-4ed5-a90b-6fe840ac9700.gif)
 
 By specifying the `button_position` as `bottom|right`, neopop will compute bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to `button_position`
 ```xml  
@@ -37,6 +38,7 @@ By specifying the `button_position` as `bottom|right`, neopop will compute botto
 
 ## Flat
 ![Flat](https://user-images.githubusercontent.com/9965653/172597180-63b4c386-9b7c-4211-a64c-a79892232481.png "Flat Button")
+![flatButton](https://user-images.githubusercontent.com/9965653/175874619-b5edb3e8-6c18-4f15-8e60-ef44cb004c94.gif)
 By specifying the `button_position` as `center`, neopop will compute right and bottom surface's color according to `neopop_center_surface_color`.
 Top and left surface's color is computed w.r.t `neopop_parent_view_color` and `neopop_grandparent_view_color`
 ```xml  
@@ -61,6 +63,7 @@ Top and left surface's color is computed w.r.t `neopop_parent_view_color` and `n
  ```  
 ## Flat Strokes
 ![Flat Strokes](https://user-images.githubusercontent.com/9965653/172597728-5830cc72-1d2a-4d52-8089-55fb61449996.png "Flat Strokes")
+![flatStroked](https://user-images.githubusercontent.com/9965653/175874617-a90ef305-d460-4887-927c-0ddecfe45975.gif)
 To render stroke on a flat button, add `neopop_stroke_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout    
@@ -75,6 +78,7 @@ To render stroke on a flat button, add `neopop_stroke_color`
 ## Plunk Strokes
 
 ![Elevated Strokes](https://user-images.githubusercontent.com/9965653/172597473-630c86b9-574d-4f65-afeb-171c5ec147cc.png "Elevated Strokes")
+![elevatedStroked](https://user-images.githubusercontent.com/9965653/175874610-3e92e9e9-cbed-4906-a90b-423c615e465d.gif)
 To render strokes on an elevated button ,add
 `neopop_is_stroked_button = "true"` and `neopop_stroke_color`
 ```xml  
@@ -280,6 +284,7 @@ To render strokes on an elevated button ,add
 
 ## Non Floating
 ![Non Floating](https://user-images.githubusercontent.com/9965653/172599904-75d12903-f490-47d6-b8df-39adc9ef058e.png "Non Floating")
+![tiltNonFloating](https://user-images.githubusercontent.com/9965653/175874607-e8e10326-1d6d-4b7d-be8f-50cc8f37ee14.gif)
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout  
      ...
@@ -294,7 +299,8 @@ To render strokes on an elevated button ,add
 ```  
 
 ##  Floating
-![Non Floating](https://user-images.githubusercontent.com/9965653/172599406-6da2d3a4-06ff-4a74-bd6a-988b36a59159.png "Floating")
+![Floating](https://user-images.githubusercontent.com/9965653/172599406-6da2d3a4-06ff-4a74-bd6a-988b36a59159.png "Floating")
+![tiltFloating](https://user-images.githubusercontent.com/9965653/175874595-86cc0725-df20-4ab3-b432-a6110d4c97c4.gif)
 
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout  
@@ -311,14 +317,16 @@ To render strokes on an elevated button ,add
 
 ## Strokes
 ![Strokes](https://user-images.githubusercontent.com/9965653/172600281-53eec23d-3596-470e-95ed-dc93ebef82bb.png "Strokes")
+![TiltStroked](https://user-images.githubusercontent.com/9965653/175874601-91a27b7d-9e1b-4148-9a26-b9c9245e7a05.gif)
 ## Shimmer
 
-![Drawable Button](https://i.imgur.com/Bnjb5Cj.png "Drawable Button")
+![shimmer](https://user-images.githubusercontent.com/9965653/175874574-99f209f2-2d14-458b-9f92-959e6aabf112.gif)
 
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout    
   ...  
- app:neopop_shimmer_duration="5000"  app:neopop_top_shimmer_color="#f00"    
+  app:neopop_shimmer_duration="5000"  
+  app:neopop_top_shimmer_color="#f00"    
   app:neopop_bottom_shimmer_color="#0f0"    
   app:neopop_show_shimmer="true"    
   app:neopop_shadow_rotation="32">  
