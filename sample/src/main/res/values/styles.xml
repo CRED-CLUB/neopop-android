@@ -126,16 +126,11 @@
         <item name="android:layout_height">52dp</item>
         <item name="android:layout_width">52dp</item>
         <item name="neopop_depth">3dp</item>
-        <item name="neopop_stroke_color">#8DD04A</item>
         <item name="neopop_center_surface_color">#0d0d0d</item>
         <item name="neopop_draw_full_width">true</item>
         <item name="android:clickable">true</item>
-        <item name="neopop_draw_full_height">true</item>
-        <item name="neopop_show_shimmer">true</item>
         <item name="android:drawablePadding">10dp</item>
-        <item name="neopop_right_surface_color">#629F25</item>
-        <item name="neopop_bottom_surface_color">#3F6915</item>
-        <item name="neopop_parent_view_color">@color/pop_black</item>
+        <item name="neopop_parent_view_color">@color/pop_grey</item>
     </style>
 
     <style name="AlignedButtons">

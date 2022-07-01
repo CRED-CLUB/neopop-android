@@ -16,12 +16,14 @@
 
     <club.cred.neopop.PopFrameLayout
         android:id="@+id/topLeft"
-        style="@style/PositionedButton"
         android:clickable="true"
+        style="@style/PositionedButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
         app:neopop_button_position="top|left"
-        app:neopop_grandparent_view_color="@color/black">
+        app:neopop_grandparent_view_color="@color/black"
+        app:neopop_center_surface_color="#2C5ECD"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +33,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -43,6 +45,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
+        app:neopop_center_surface_color="#E659E6"
+
         app:neopop_button_position="top"
         app:neopop_grandparent_view_color="@color/black"
         app:neopop_parent_view_color="@color/pop_grey">
@@ -55,7 +59,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -67,6 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
         app:neopop_button_position="top|right"
+        app:neopop_center_surface_color="#3BFFAD"
+
         app:neopop_grandparent_view_color="@color/black"
         app:neopop_parent_view_color="@color/pop_grey">
 
@@ -78,7 +84,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -90,6 +96,8 @@
         app:layout_constraintBottom_toBottomOf="@id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
+        app:neopop_center_surface_color="#E5FE40"
+
         app:neopop_button_position="right"
         app:neopop_parent_view_color="@color/pop_grey">
 
@@ -101,7 +109,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -110,6 +118,8 @@
         android:id="@+id/bottomRight"
         style="@style/PositionedButton"
         android:clickable="true"
+        app:neopop_center_surface_color="#6A35FF"
+
         app:layout_constraintBottom_toBottomOf="@id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:neopop_button_position="bottom|right"
@@ -123,7 +133,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -132,6 +142,8 @@
         android:id="@+id/bottom"
         style="@style/PositionedButton"
         android:clickable="true"
+        app:neopop_center_surface_color="#FF426F"
+
         app:layout_constraintBottom_toBottomOf="@id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +158,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -155,6 +167,8 @@
         android:id="@+id/bottomLeft"
         style="@style/PositionedButton"
         android:clickable="true"
+        app:neopop_center_surface_color="#FFCB45"
+
         app:layout_constraintBottom_toBottomOf="@id/bg"
         app:layout_constraintStart_toStartOf="parent"
         app:neopop_button_position="bottom|left"
@@ -169,7 +183,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -182,6 +196,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
         app:neopop_button_position="left"
+        app:neopop_center_surface_color="#AA3FFF"
+
         app:neopop_grandparent_view_color="@color/black"
         app:neopop_parent_view_color="@color/pop_grey">
 
@@ -193,7 +209,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
@@ -205,6 +221,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/bg"
+        app:neopop_center_surface_color="#FF8744"
+
         app:neopop_button_position="center"
         app:neopop_draw_full_height="false"
         app:neopop_draw_full_width="false"
@@ -218,7 +236,7 @@
             android:gravity="center"
             android:text="@string/button_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>

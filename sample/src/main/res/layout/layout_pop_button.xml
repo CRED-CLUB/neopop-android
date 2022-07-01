@@ -4,7 +4,7 @@
     android:layout_width="match_parent">
 
     <ImageView
-        android:layout_width="90dp"
+        android:layout_width="86dp"
         android:layout_height="15dp"
         android:layout_gravity="center"
         android:background="@drawable/ic_pop_entry_text" />
