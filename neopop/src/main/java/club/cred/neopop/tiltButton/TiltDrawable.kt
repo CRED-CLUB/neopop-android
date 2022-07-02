@@ -108,7 +108,7 @@ internal class TiltDrawable(
 
     private fun Canvas.drawBottomShadow() {
         translateWith(dx, dy) {
-            this.drawPath(neoPopGeometry.bottomShadowPlane.fullOutline, bottomSurfacePaint)
+            this.drawPath(neoPopGeometry.bottomSurfacePlane.fullOutline, bottomSurfacePaint)
         }
     }
 
@@ -130,7 +130,7 @@ internal class TiltDrawable(
     private fun Canvas.drawFloatingShadow() {
         if (tiltStyle.gravity == NeoPopGravity.ON_SPACE) {
             translateWith(dx, -shadowY) {
-                this.drawPath(neoPopGeometry.blackShadowPlane.fullOutline, shadowPaint)
+                this.drawPath(neoPopGeometry.shadowPlane.fullOutline, shadowPaint)
             }
         }
     }

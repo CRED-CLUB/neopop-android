@@ -56,13 +56,13 @@
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:layout_gravity="center"
-            android:text="@string/button_text"
             android:fontFamily="sans-serif"
-            android:textFontWeight="600"
-            android:textColor="@color/white"
             android:gravity="center"
+            android:text="@string/button_text"
             android:textAlignment="center"
-            android:textSize="@dimen/sp_9"/>
+            android:textColor="@color/white"
+            android:textFontWeight="600"
+            android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
 
 
@@ -84,13 +84,13 @@
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:layout_gravity="center"
-            android:text="@string/button_text"
             android:fontFamily="sans-serif"
-            android:textFontWeight="600"
-            android:textColor="@color/black"
             android:gravity="center"
+            android:text="@string/button_text"
             android:textAlignment="center"
-            android:textSize="@dimen/sp_9"/>
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
 
 
@@ -101,22 +101,22 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:clickable="true"
-        app:neopop_button_on_bottom="@id/right_bottom"
         app:layout_constraintBottom_toTopOf="@+id/right_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ttl">
+        app:layout_constraintTop_toBottomOf="@+id/ttl"
+        app:neopop_button_on_bottom="@id/right_bottom">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:layout_gravity="center"
-            android:text="@string/button_text"
             android:fontFamily="sans-serif"
-            android:textFontWeight="600"
-            android:textColor="@color/white"
             android:gravity="center"
+            android:text="@string/button_text"
             android:textAlignment="center"
-            android:textSize="@dimen/sp_9"/>
+            android:textColor="@color/white"
+            android:textFontWeight="600"
+            android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
 
 
@@ -134,13 +134,13 @@
             android:layout_width="wrap_content"
             android:layout_height="13dp"
             android:layout_gravity="center"
-            android:text="@string/button_text"
             android:fontFamily="sans-serif"
-            android:textFontWeight="600"
-            android:textColor="@color/black"
             android:gravity="center"
+            android:text="@string/button_text"
             android:textAlignment="center"
-            android:textSize="@dimen/sp_9"/>
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            android:textSize="@dimen/sp_9" />
     </club.cred.neopop.PopFrameLayout>
 
     <ImageView

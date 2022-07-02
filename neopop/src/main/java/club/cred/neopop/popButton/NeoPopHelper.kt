@@ -25,7 +25,7 @@ object NeoPopHelper {
             buttonOnLeft,
             buttonOnTop,
             buttonOnBottom,
-            shadowWidth,
+            depth,
             isStrokedButton,
             parentViewColor,
             grandParentViewColor,
@@ -39,7 +39,7 @@ object NeoPopHelper {
         buttonOnLeft: Int,
         buttonOnTop: Int,
         buttonOnBottom: Int,
-        shadowWidth: Float,
+        depth: Float,
         isStrokedButton: Boolean,
         parentViewColor: Int,
         grandParentViewColor: Int,
@@ -52,8 +52,8 @@ object NeoPopHelper {
         var calculatedLeftShadowVisibility = true
         var calculatedTopShadowColor = Color.TRANSPARENT
         var calculatedLeftShadowColor = Color.TRANSPARENT
-        val horizontalShadowColor = PopFrameLayoutStyle.getHorizontalShadowColor(mainCardColor)
-        val verticalShadowColor = PopFrameLayoutStyle.getVerticalShadowColor(mainCardColor)
+        val horizontalShadowColor = PopFrameLayoutStyle.getHorizontalSurfaceColor(mainCardColor)
+        val verticalShadowColor = PopFrameLayoutStyle.getVerticalSurfaceColor(mainCardColor)
         var calculatedRightShadowColor = horizontalShadowColor
         var calculatedBottomShadowColor = verticalShadowColor
         when (buttonPosition) {
@@ -64,7 +64,7 @@ object NeoPopHelper {
                 calculatedLeftShadowVisibility = true
                 calculatedLeftShadowColor = getOrDefault(
                     parentViewColor != Int.MIN_VALUE,
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor),
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor),
                     horizontalShadowColor
                 )
                 calculatedTopShadowColor = getOrDefault(
@@ -98,7 +98,7 @@ object NeoPopHelper {
                     Color.TRANSPARENT
                 }
                 calculatedLeftShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor)
                 } else {
                     horizontalShadowColor
                 }
@@ -118,12 +118,12 @@ object NeoPopHelper {
                 calculatedRightShadowColor = horizontalShadowColor
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
                 calculatedLeftShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor)
                 } else {
                     horizontalShadowColor
                 }
@@ -148,12 +148,12 @@ object NeoPopHelper {
                 calculatedBottomShadowColor = verticalShadowColor
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
                 calculatedLeftShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor)
                 } else {
                     horizontalShadowColor
                 }
@@ -173,12 +173,12 @@ object NeoPopHelper {
                 calculatedBottomShadowColor = verticalShadowColor
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
                 calculatedLeftShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor)
                 } else {
                     horizontalShadowColor
                 }
@@ -202,7 +202,7 @@ object NeoPopHelper {
                 calculatedBottomShadowColor = verticalShadowColor
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
@@ -227,7 +227,7 @@ object NeoPopHelper {
                 calculatedBottomShadowVisibility = false
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
@@ -280,12 +280,12 @@ object NeoPopHelper {
                 calculatedBottomShadowVisibility = false
 
                 calculatedTopShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getVerticalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getVerticalSurfaceColor(parentViewColor)
                 } else {
                     verticalShadowColor
                 }
                 calculatedLeftShadowColor = if (parentViewColor != Int.MIN_VALUE) {
-                    PopFrameLayoutStyle.getHorizontalShadowColor(parentViewColor)
+                    PopFrameLayoutStyle.getHorizontalSurfaceColor(parentViewColor)
                 } else {
                     horizontalShadowColor
                 }
@@ -316,7 +316,7 @@ object NeoPopHelper {
             isBottomSurfaceVisible = calculatedBottomShadowVisibility,
             isTopSurfaceVisible = calculatedTopShadowVisibility,
             buttonPosition = buttonPosition,
-            shadowWidth = shadowWidth,
+            depth = depth,
             isStrokedButton = isStrokedButton
         )
     }
@@ -342,12 +342,12 @@ object NeoPopHelper {
             rightSurfaceColor = getOrDefault(
                 hasStrokes,
                 popStyle.rightSurfaceColor,
-                popStyle.disabledRightShadowColor
+                popStyle.disabledRightSurfaceColor
             ),
             bottomSurfaceColor = getOrDefault(
                 hasStrokes,
                 popStyle.bottomSurfaceColor,
-                popStyle.disabledBottomShadowColor
+                popStyle.disabledBottomSurfaceColor
             ),
         )
     }

@@ -28,9 +28,9 @@ internal data class PopFrameLayoutStyle(
     val isTopSurfaceVisible: Boolean = false,
     val isRightSurfaceVisible: Boolean = true,
     val isBottomSurfaceVisible: Boolean = true,
-    val shadowWidth: Float = 8f.dp,
+    val depth: Float = 8f.dp,
     val buttonPosition: Int = -1,
-    val isBottomSheetShadow: Boolean = false,
+    val isBottomSheetSurface: Boolean = false,
     val surfaceStrokeColors: SurfaceStrokeColorData? = null,
     val isStrokedButton: Boolean = true,
     val buttonOnLeft: Int = Int.MIN_VALUE,
@@ -46,8 +46,8 @@ internal data class PopFrameLayoutStyle(
     val drawFullHeight: Boolean = false,
     val disabledOpacity: Int = PopFrameLayoutStyle.disabledOpacity,
     val disabledCardColor: Int = PopFrameLayoutStyle.disabledCardColor,
-    val disabledBottomShadowColor: Int = PopFrameLayoutStyle.disabledBottomShadowColor,
-    val disabledRightShadowColor: Int = PopFrameLayoutStyle.disabledRightShadowColor,
+    val disabledBottomSurfaceColor: Int = PopFrameLayoutStyle.disabledBottomSurfaceColor,
+    val disabledRightSurfaceColor: Int = PopFrameLayoutStyle.disabledRightSurfaceColor,
     val shimmerStartDelay: Long = 0L,
     val shimmerRepeatDelay: Long = 0L,
     val parentViewColor: Int = Int.MIN_VALUE,
@@ -66,45 +66,45 @@ internal data class PopFrameLayoutStyle(
         const val top_left = top.or(left)
         const val disabledOpacity = 0x4D
         const val disabledCardColor = 0xff8A8A8A.toInt()
-        const val disabledRightShadowColor = 0xffB6B6B6.toInt()
-        const val disabledBottomShadowColor = 0xff3D3D3D.toInt()
+        const val disabledRightSurfaceColor = 0xffB6B6B6.toInt()
+        const val disabledBottomSurfaceColor = 0xff3D3D3D.toInt()
         private const val BOTTOM_SHIMMER_ALPHA = 0x1A
 
         const val HUE = 0
         const val SATURATION = 1
         const val LIGHTNESS = 2
 
-        // shadow rgb to hsl  ->  if l>=30 rightShadow = l-10 bottom=l-20
-        // else rightShadow = l+20 bottomSHdaow = l+10
-        fun getHorizontalShadowColor(cardColor: Int): Int {
+        // surface rgb to hsl  ->  if l>=30 rightSurface = l-10 bottom=l-20
+        // else rightSurface = l+20 bottomSHdaow = l+10
+        fun getHorizontalSurfaceColor(cardColor: Int): Int {
             val hsl = FloatArray(3)
             ColorUtils.colorToHSL(cardColor, hsl)
             return if (hsl[LIGHTNESS] >= 0.3f) {
-                val rightShadowColorHSL = hsl.copyOf().apply {
+                val rightSurfaceColorHSL = hsl.copyOf().apply {
                     this[LIGHTNESS] = hsl[LIGHTNESS] - 0.1f
                 }
-                ColorUtils.HSLToColor(rightShadowColorHSL)
+                ColorUtils.HSLToColor(rightSurfaceColorHSL)
             } else {
-                val rightShadowColorHSL = hsl.copyOf().apply {
+                val rightSurfaceColorHSL = hsl.copyOf().apply {
                     this[LIGHTNESS] = hsl[LIGHTNESS] + 0.2f
                 }
-                ColorUtils.HSLToColor(rightShadowColorHSL)
+                ColorUtils.HSLToColor(rightSurfaceColorHSL)
             }
         }
 
-        fun getVerticalShadowColor(cardColor: Int): Int {
+        fun getVerticalSurfaceColor(cardColor: Int): Int {
             val hsl = FloatArray(3)
             ColorUtils.colorToHSL(cardColor, hsl)
             return if (hsl[LIGHTNESS] >= 0.3f) {
-                val bottomShadowColorHSL = hsl.copyOf().apply {
+                val bottomSurfaceColorHSL = hsl.copyOf().apply {
                     this[LIGHTNESS] = hsl[LIGHTNESS] - 0.2f
                 }
-                ColorUtils.HSLToColor(bottomShadowColorHSL)
+                ColorUtils.HSLToColor(bottomSurfaceColorHSL)
             } else {
-                val bottomShadowColorHSL = hsl.copyOf().apply {
+                val bottomSurfaceColorHSL = hsl.copyOf().apply {
                     this[LIGHTNESS] = hsl[LIGHTNESS] + 0.1f
                 }
-                ColorUtils.HSLToColor(bottomShadowColorHSL)
+                ColorUtils.HSLToColor(bottomSurfaceColorHSL)
             }
         }
 

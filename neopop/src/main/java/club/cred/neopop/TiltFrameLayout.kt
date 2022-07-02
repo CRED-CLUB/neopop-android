@@ -24,7 +24,6 @@ import club.cred.neopop.common.getMovePath
 import club.cred.neopop.common.withAttrs
 import club.cred.neopop.popButton.NeoPopGeometry
 import club.cred.neopop.popButton.PopFrameLayoutStyle
-import club.cred.neopop.popButton.PopFrameLayoutStyle.Companion.getVerticalShadowColor
 import club.cred.neopop.tiltButton.NeoPopGravity
 import club.cred.neopop.tiltButton.TiltAnimationHelper
 import club.cred.neopop.tiltButton.TiltDrawable
@@ -33,8 +32,8 @@ import club.cred.neopop.tiltButton.TiltFrameLayoutStyle.Companion.getDisabledSta
 import club.cred.neopop.tiltButton.TiltGeometry
 import club.cred.neopop.tiltButton.TiltGeometry.Companion.DEFAULT_BOTTOM_SURFACE_ROTATION
 import club.cred.neopop.tiltButton.TiltGeometry.Companion.DEFAULT_CENTER_SURFACE_ROTATION
-import club.cred.neopop.tiltButton.TiltGeometry.Companion.DEFAULT_SHADOW_COLOR
 import club.cred.neopop.tiltButton.TiltGeometry.Companion.DEFAULT_SHADOW_WIDTH
+import club.cred.neopop.tiltButton.TiltGeometry.Companion.DEFAULT_SURFACE_COLOR
 import com.dreamplug.neopop.R
 import kotlin.properties.ObservableProperty
 import kotlin.properties.ReadWriteProperty
@@ -54,7 +53,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     /**
      * bottom surface color
      */
-    var bottomSurfaceColor: Int by onFieldChange(DEFAULT_SHADOW_COLOR) { copy(bottomSurfaceColor = it) }
+    var bottomSurfaceColor: Int by onFieldChange(DEFAULT_SURFACE_COLOR) { copy(bottomSurfaceColor = it) }
 
     /**
      * set true to enable strokes
@@ -71,7 +70,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     var shimmerColor: Int by onFieldChange(TiltGeometry.SHIMMER_COLOR) { copy(shimmerColor = it) }
     var strokeColor: Int by onFieldChange(TiltGeometry.STROKE_COLOR) { copy(strokeColor = it) }
     var depth: Float by onFieldChange(DEFAULT_SHADOW_WIDTH) { copy(depth = it) }
-    var shadowColor: Int by onFieldChange(TiltGeometry.DEFAULT_FLOATING_SHADOW_COLOR) {
+    var shadowColor: Int by onFieldChange(TiltGeometry.DEFAULT_SHADOW_COLOR) {
         copy(shadowColor = it)
     }
 
@@ -102,7 +101,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     private var centerSurfaceColor: Int by onFieldChange(0) {
         copy(
             centerSurfaceColor = it,
-            bottomSurfaceColor = getVerticalShadowColor(it)
+            bottomSurfaceColor = PopFrameLayoutStyle.getVerticalSurfaceColor(it)
         )
     }
 
@@ -171,7 +170,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
      */
     fun setDisableStyle(
         cardColor: Int,
-        shadowColor: Int = getVerticalShadowColor(cardColor)
+        shadowColor: Int = PopFrameLayoutStyle.getVerticalSurfaceColor(cardColor)
     ) {
         disabledStyle = TiltFrameLayoutStyle.createDisableStyle(
             tiltStyle,
@@ -272,7 +271,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
             )
             bottomSurfaceColor = getColor(
                 R.styleable.TiltFrameLayout_neopop_bottom_surface_color,
-                getVerticalShadowColor(centerSurfaceColor)
+                PopFrameLayoutStyle.getVerticalSurfaceColor(centerSurfaceColor)
             )
             gravity = NeoPopGravity.getValueFromInt(
                 getInt(
@@ -291,7 +290,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
                 )
                 shadowColor = getColor(
                     R.styleable.TiltFrameLayout_neopop_shadow_color,
-                    TiltGeometry.DEFAULT_FLOATING_SHADOW_COLOR
+                    TiltGeometry.DEFAULT_SHADOW_COLOR
                 )
             }
             if (showShimmer) {

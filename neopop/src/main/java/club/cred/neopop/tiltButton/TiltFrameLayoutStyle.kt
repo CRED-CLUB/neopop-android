@@ -31,7 +31,7 @@ data class TiltFrameLayoutStyle(
     val isEnabled: Boolean = true,
     val shimmerStartDelay: Long = 0L,
     val shimmerRepeatDelay: Long = 0L,
-    val shadowColor: Int = TiltGeometry.DEFAULT_FLOATING_SHADOW_COLOR,
+    val shadowColor: Int = TiltGeometry.DEFAULT_SHADOW_COLOR,
     val strokeColor: Int = TiltGeometry.STROKE_COLOR,
     val isStrokeEnabled: Boolean = false,
     val strokeWidth: Float = TiltGeometry.DEFAULT_STROKE_WIDTH,

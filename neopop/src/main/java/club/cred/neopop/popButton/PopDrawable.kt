@@ -110,11 +110,11 @@ internal class PopDrawable(
         if (bounds == null) return
         neoPopGeometry = NeoPopGeometry(
             size = Size(bounds.width(), bounds.height()),
-            totalDepth = popStyleData.shadowWidth.roundToInt().toFloat(),
+            totalDepth = popStyleData.depth.roundToInt().toFloat(),
             clipRight = !popStyleData.isRightSurfaceVisible,
             clipBottom = !popStyleData.isBottomSurfaceVisible,
             viewBoundRect = bounds,
-            isBottomSheet = popStyleData.isBottomSheetShadow,
+            isBottomSheet = popStyleData.isBottomSheetSurface,
             shimmerWidth = popStyleData.shimmerWidth,
             drawFullWidth = popStyleData.drawFullWidth,
             drawFullHeight = popStyleData.drawFullHeight
@@ -130,7 +130,7 @@ internal class PopDrawable(
             return
         }
         canvas.clipPop {
-            if (popStyleData.isBottomSheetShadow || dx > 0 || dy > 0) {
+            if (popStyleData.isBottomSheetSurface || dx > 0 || dy > 0) {
                 if (popStyleData.isLeftSurfaceVisible) {
                     drawPath(neoPopGeometry.startShadow.fullOutline, leftShadowPaint)
                 }
@@ -142,7 +142,7 @@ internal class PopDrawable(
                 if (popStyleData.isRightSurfaceVisible) {
                     drawPath(neoPopGeometry.endShadow.fullOutline, rightShadowPaint)
                 }
-                if (popStyleData.isBottomSurfaceVisible && !popStyleData.isBottomSheetShadow) {
+                if (popStyleData.isBottomSurfaceVisible && !popStyleData.isBottomSheetSurface) {
                     drawPath(
                         neoPopGeometry.bottomShadow.fullOutline,
                         bottomShadowPaint
