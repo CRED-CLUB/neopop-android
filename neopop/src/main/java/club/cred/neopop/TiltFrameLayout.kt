@@ -46,9 +46,24 @@ open class TiltFrameLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
+    /**
+     * true to enable shimmer
+     */
     var showShimmer: Boolean by onFieldChange(true) { copy(hasShimmer = it) }
+
+    /**
+     * bottom surface color
+     */
     var bottomSurfaceColor: Int by onFieldChange(DEFAULT_SHADOW_COLOR) { copy(bottomSurfaceColor = it) }
+
+    /**
+     * set true to enable strokes
+     */
     var isStrokeEnabled: Boolean by onFieldChange(false) { copy(isStrokeEnabled = it) }
+
+    /**
+     * bottom surface shimmer color
+     */
     var bottomShimmerColor by onFieldChange(TiltGeometry.SHIMMER_COLOR) { copy(bottomShimmerColor = it) }
     var shimmerStartDelay: Long by onFieldChange(0L) { copy(shimmerStartDelay = it) }
     var shimmerRepeatDelay: Long by onFieldChange(0L) { copy(shimmerRepeatDelay = it) }

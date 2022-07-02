@@ -56,25 +56,47 @@ open class PopFrameLayout @JvmOverloads constructor(
         setCenterSurfaceColor(it)
     }
 
+    /**
+     * height of top and bottom surface
+     * width of left and right surface
+     */
     var shadowWidth: Float = NeoPopGeometry.DEFAULT_SHADOW_WIDTH
+
+    /**
+     * Sets the colors for surfaces borders
+     */
     var edgeColors: SurfaceStrokeColorData? by handleDynamicAttr(null) {
         popStyle = popStyle.copy(surfaceStrokeColors = it)
     }
+
+    /**
+     * sets the color for top surface
+     */
     var topSurfaceColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
         popStyle = popStyle.copy(topSurfaceColor = it)
     }
 
+    /**
+     * sets the color for bottom surface
+     */
     var bottomSurfaceColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
         popStyle = popStyle.copy(bottomSurfaceColor = it)
     }
 
+    /**
+     * sets the color for left surface
+     */
     var leftSurfaceColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
         popStyle = popStyle.copy(leftSurfaceColor = it)
     }
 
+    /**
+     * sets the color for right surface
+     */
     var rightSurfaceColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
         popStyle = popStyle.copy(rightSurfaceColor = it)
     }
+
     var shadowColors: Colors by handleDynamicAttr(Colors()) {
         popStyle = popStyle.copy(
             topSurfaceColor = it.topColor ?: popStyle.topSurfaceColor,
@@ -83,6 +105,66 @@ open class PopFrameLayout @JvmOverloads constructor(
             rightSurfaceColor = it.rightColor ?: popStyle.rightSurfaceColor,
         )
     }
+
+    /**
+     * [parentViewColor] should be same as the background color of the view,
+     * helps calculates surface colors for flat Buttons
+     */
+    var parentViewColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(parentViewColor = it)
+            .calculateButtonStyles()
+    }
+
+    var grandParentViewColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(grandParentViewColor = it)
+            .calculateButtonStyles()
+    }
+
+    /**
+     * set this if there's a button on left, contains the target child id
+     * this will recalculate the respective surface property
+     */
+    var buttonOnLeft: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(buttonOnLeft = it)
+            .calculateButtonStyles()
+    }
+
+    /**
+     * set this if there's a button on right, contains the target child id
+     * this will recalculate the respective surface property
+     */
+    var buttonOnRight: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(buttonOnRight = it)
+            .calculateButtonStyles()
+    }
+
+    /**
+     * set this if there's a button on top, contains the target child id
+     * this will recalculate the respective surface property
+     */
+    var buttonOnTop: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(buttonOnTop = it)
+            .calculateButtonStyles()
+    }
+
+    /**
+     * set this if there's a button on bottom, contains the target child id
+     * this will recalculate the respective surface property
+     */
+    var buttonOnBottom: Int by handleDynamicAttr(Int.MIN_VALUE) {
+        popStyle = popStyle
+            .copy(buttonOnBottom = it)
+            .calculateButtonStyles()
+    }
+
+    //////////////////////////////////
+    // Shimmer properties
+    /////////////////////////////////
     var shimmerColor: Int by handleDynamicAttr(Color.TRANSPARENT) {
         popStyle = popStyle.copy(shimmerColor = it)
     }
@@ -93,39 +175,9 @@ open class PopFrameLayout @JvmOverloads constructor(
         popStyle = popStyle.copy(shimmerRepeatDelay = it)
     }
 
-    var grandParentViewColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(grandParentViewColor = it)
-            .calculateButtonStyles()
-    }
-
-    var parentViewColor: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(parentViewColor = it)
-            .calculateButtonStyles()
-    }
-    var buttonOnLeft: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(buttonOnLeft = it)
-            .calculateButtonStyles()
-    }
-    var buttonOnRight: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(buttonOnRight = it)
-            .calculateButtonStyles()
-    }
-    var buttonOnTop: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(buttonOnTop = it)
-            .calculateButtonStyles()
-    }
-
-    var buttonOnBottom: Int by handleDynamicAttr(Int.MIN_VALUE) {
-        popStyle = popStyle
-            .copy(buttonOnBottom = it)
-            .calculateButtonStyles()
-    }
-
+    /**
+     * returns if the shimmer is animating or not
+     */
     val isShimmerAnimationRunning: Boolean
         get() = popDrawable.isShimmerAnimating
 
