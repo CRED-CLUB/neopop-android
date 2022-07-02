@@ -1,0 +1,34 @@
+#Release builds to QA
+name: Publish to S3
+env:
+  ANDROID_SDK_ROOT: '/home/ubuntu/sdk/android'
+  JAVA_HOME: '/home/ubuntu/.sdkman/candidates/java/current'
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+  CI: 'true'
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: [self-hosted, Linux, standalone]
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          lfs: 'true'
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: Set env
+        run: |
+          echo ::set-env name=AWS_ACCESS_KEY_ID::${{ secrets.AWS_ACCESS_KEY_ID }}
+          echo ::set-env name=AWS_SECRET_ACCESS_KEY::${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          echo ::set-env name=ARTIFACTS_URL::${{ secrets.ARTIFACTS_URL }}
+      - name: Publish
+        id: publish
+        run: |
+          source /home/ubuntu/.bashrc
+          source /etc/profile
+
+          ./gradlew --no-daemon --max-workers 8 --build-cache assembleRelease publish -Paws_access_key_id='${{ secrets.AWS_ACCESS_KEY_ID }}' -Paws_secret_access_key='${{ secrets.AWS_SECRET_ACCESS_KEY }}' -Partifacts_url='${{ secrets.ARTIFACTS_URL }}'
