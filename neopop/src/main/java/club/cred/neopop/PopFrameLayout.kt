@@ -60,7 +60,7 @@ open class PopFrameLayout @JvmOverloads constructor(
      * height of top and bottom surface
      * width of left and right surface
      */
-    var shadowWidth: Float = NeoPopGeometry.DEFAULT_SHADOW_WIDTH
+    var depth: Float = NeoPopGeometry.DEFAULT_DEPTH
 
     /**
      * Sets the colors for surfaces borders
@@ -97,7 +97,7 @@ open class PopFrameLayout @JvmOverloads constructor(
         popStyle = popStyle.copy(rightSurfaceColor = it)
     }
 
-    var shadowColors: Colors by handleDynamicAttr(Colors()) {
+    var surfaceColors: Colors by handleDynamicAttr(Colors()) {
         popStyle = popStyle.copy(
             topSurfaceColor = it.topColor ?: popStyle.topSurfaceColor,
             bottomSurfaceColor = it.bottomColor ?: popStyle.bottomSurfaceColor,
@@ -320,8 +320,8 @@ open class PopFrameLayout @JvmOverloads constructor(
     }
 
     private fun updateButtonState(animatedValue: Float) {
-        val dx = animatedValue * shadowWidth
-        val dy = animatedValue * shadowWidth
+        val dx = animatedValue * depth
+        val dy = animatedValue * depth
         popDrawable.onAnimate(dx, dy)
         popDrawable.onStrokeWidthAnimate(animatedValue)
         animatePadding(dx.toInt())
@@ -395,18 +395,18 @@ open class PopFrameLayout @JvmOverloads constructor(
                 R.styleable.PopFrameLayout_neopop_disabled_card_color,
                 PopFrameLayoutStyle.disabledCardColor
             )
-            val disabledRightShadowColor = getColor(
+            val disabledRightSurfaceColor = getColor(
                 R.styleable.PopFrameLayout_neopop_disabled_right_surface_color,
-                PopFrameLayoutStyle.disabledRightShadowColor
+                PopFrameLayoutStyle.disabledRightSurfaceColor
             )
-            val disabledBottomShadowColor = getColor(
+            val disabledBottomSurfaceColor = getColor(
                 R.styleable.PopFrameLayout_neopop_disabled_bottom_surface_color,
-                PopFrameLayoutStyle.disabledBottomShadowColor
+                PopFrameLayoutStyle.disabledBottomSurfaceColor
             )
 
-            shadowWidth = getDimension(
+            depth = getDimension(
                 R.styleable.PopFrameLayout_neopop_depth,
-                NeoPopGeometry.DEFAULT_SHADOW_WIDTH
+                NeoPopGeometry.DEFAULT_DEPTH
             )
             val strokeWidth = getDimension(
                 R.styleable.PopFrameLayout_neopop_stroke_width,
@@ -429,7 +429,7 @@ open class PopFrameLayout @JvmOverloads constructor(
                 buttonOnLeft = buttonOnLeft,
                 buttonOnTop = buttonOnTop,
                 buttonOnBottom = buttonOnBottom,
-                shadowWidth = shadowWidth,
+                depth = depth,
                 isStrokedButton = isStrokedButton,
                 parentViewColor = parentViewColor,
                 grandParentViewColor = grandParentViewColor,
@@ -462,19 +462,19 @@ open class PopFrameLayout @JvmOverloads constructor(
                 false
             )
 
-            val isRightShadowVisible = getBoolean(
+            val isRightSurfaceVisible = getBoolean(
                 R.styleable.PopFrameLayout_neopop_is_right_surface_visible,
                 calculatedNeoPopStyle.isRightSurfaceVisible
             )
-            val isTopShadowVisible = getBoolean(
+            val isTopSurfaceVisible = getBoolean(
                 R.styleable.PopFrameLayout_neopop_is_top_surface_visible,
                 calculatedNeoPopStyle.isTopSurfaceVisible
             )
-            val isLeftShadowVisible = getBoolean(
+            val isLeftSurfaceVisible = getBoolean(
                 R.styleable.PopFrameLayout_neopop_is_left_surface_visible,
                 calculatedNeoPopStyle.isLeftSurfaceVisible
             )
-            val isBottomShadowVisible = getBoolean(
+            val isBottomSurfaceVisible = getBoolean(
                 R.styleable.PopFrameLayout_neopop_is_bottom_surface_visible,
                 calculatedNeoPopStyle.isBottomSurfaceVisible
             )
@@ -505,12 +505,12 @@ open class PopFrameLayout @JvmOverloads constructor(
                 bottomSurfaceColor = bottomSurfaceColor,
                 rightSurfaceColor = rightSurfaceColor,
                 leftSurfaceColor = leftSurfaceColor,
-                isLeftSurfaceVisible = isLeftShadowVisible,
-                isRightSurfaceVisible = isRightShadowVisible,
-                isBottomSurfaceVisible = isBottomShadowVisible,
-                isTopSurfaceVisible = isTopShadowVisible,
+                isLeftSurfaceVisible = isLeftSurfaceVisible,
+                isRightSurfaceVisible = isRightSurfaceVisible,
+                isBottomSurfaceVisible = isBottomSurfaceVisible,
+                isTopSurfaceVisible = isTopSurfaceVisible,
                 buttonPosition = buttonPosition,
-                shadowWidth = shadowWidth,
+                depth = depth,
                 isStrokedButton = isStrokedButton,
                 buttonOnRight = buttonOnRight,
                 buttonOnLeft = buttonOnLeft,
@@ -537,15 +537,15 @@ open class PopFrameLayout @JvmOverloads constructor(
                 drawFullWidth = drawFullWidth,
                 disabledOpacity = disabledOpacity,
                 disabledCardColor = disabledCardColor,
-                disabledBottomShadowColor = disabledBottomShadowColor,
-                disabledRightShadowColor = disabledRightShadowColor,
+                disabledBottomSurfaceColor = disabledBottomSurfaceColor,
+                disabledRightSurfaceColor = disabledRightSurfaceColor,
                 shimmerStartDelay = shimmerStartDelay,
                 shimmerRepeatDelay = shimmerRepeatDelay,
             )
 
             (this@PopFrameLayout as ViewGroup).forEach {
-                it.translationY = (-shadowWidth.roundToInt()).toFloat()
-                it.translationX = (-shadowWidth.roundToInt()).toFloat()
+                it.translationY = (-depth.roundToInt()).toFloat()
+                it.translationX = (-depth.roundToInt()).toFloat()
             }
         }
     }

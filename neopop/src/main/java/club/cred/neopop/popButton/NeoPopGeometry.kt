@@ -270,7 +270,7 @@ class NeoPopGeometry(
     }
 
     companion object {
-        val DEFAULT_SHADOW_WIDTH: Float = 3f.dp
+        val DEFAULT_DEPTH: Float = 3f.dp
         val DEFAULT_STROKE_WIDTH: Float = 1f.dp
         const val BIG_SHIMMER_RECT = 0.9f
         const val THIN_SHIMMER_RECT = 0.3f

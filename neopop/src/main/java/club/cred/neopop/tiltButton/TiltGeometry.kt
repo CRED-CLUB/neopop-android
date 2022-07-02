@@ -36,12 +36,11 @@ internal class TiltGeometry(
         getMovePath(data.centerSurfaceRotation.toDouble(), size.height)
     private val bottomSurfaceMovePath =
         getMovePath(data.bottomSurfaceRotation.toDouble(), totalDepth.toInt())
-    private val shadowDeltaHeight = shadowHeight
     private val bottomSpacing =
         if (gravity == NeoPopGravity.ON_GROUND) {
             totalDepth
         } else {
-            totalDepth + shadowDeltaHeight
+            totalDepth + shadowHeight
         }
 
     val mainPlane = Quadrilateral(
@@ -51,7 +50,7 @@ internal class TiltGeometry(
         leftBottom = PointF(0f, size.height - bottomSpacing)
     )
 
-    val bottomShadowPlane = Quadrilateral(
+    val bottomSurfacePlane = Quadrilateral(
         leftTop = mainPlane.leftBottom,
         rightTop = mainPlane.rightBottom,
         rightBottom = PointF(
@@ -82,18 +81,18 @@ internal class TiltGeometry(
     val bottomPlaneStroke = OpenPolygon(
         listOf(
             PointF(
-                bottomShadowPlane.leftTop.x + strokeWidth / 2,
-                bottomShadowPlane.leftTop.y
+                bottomSurfacePlane.leftTop.x + strokeWidth / 2,
+                bottomSurfacePlane.leftTop.y
             ),
             PointF(
-                bottomShadowPlane.leftBottom.x + strokeWidth / 2,
-                bottomShadowPlane.leftBottom.y - strokeWidth / 2
+                bottomSurfacePlane.leftBottom.x + strokeWidth / 2,
+                bottomSurfacePlane.leftBottom.y - strokeWidth / 2
             ),
             PointF(
-                bottomShadowPlane.rightBottom.x - strokeWidth / 2,
-                bottomShadowPlane.rightBottom.y - strokeWidth / 2
+                bottomSurfacePlane.rightBottom.x - strokeWidth / 2,
+                bottomSurfacePlane.rightBottom.y - strokeWidth / 2
             ),
-            PointF(bottomShadowPlane.rightTop.x - strokeWidth / 2, bottomShadowPlane.rightTop.y),
+            PointF(bottomSurfacePlane.rightTop.x - strokeWidth / 2, bottomSurfacePlane.rightTop.y),
         )
     )
 
@@ -115,10 +114,10 @@ internal class TiltGeometry(
         Quadrilateral(
             leftTop = bigShimmerTopPlane.leftBottom,
             rightTop = bigShimmerTopPlane.rightBottom,
-            rightBottom = bottomShadowPlane.leftBottom,
+            rightBottom = bottomSurfacePlane.leftBottom,
             leftBottom = PointF(
-                bottomShadowPlane.leftBottom.x - (shimmerWidth * BIG_SHIMMER_WIDTh_PERCENTAGE).toInt(),
-                bottomShadowPlane.leftBottom.y
+                bottomSurfacePlane.leftBottom.x - (shimmerWidth * BIG_SHIMMER_WIDTh_PERCENTAGE).toInt(),
+                bottomSurfacePlane.leftBottom.y
             )
         )
     }
@@ -160,18 +159,18 @@ internal class TiltGeometry(
         )
     }
 
-    val blackShadowPlane by lazy {
+    val shadowPlane by lazy {
         Quadrilateral(
             leftTop = PointF(
-                bottomShadowPlane.leftBottom.x + centerSurfaceMovePath,
-                shadowDeltaHeight + totalDepth
+                bottomSurfacePlane.leftBottom.x + centerSurfaceMovePath,
+                shadowHeight + totalDepth
             ),
             rightTop = PointF(
-                bottomShadowPlane.rightBottom.x - centerSurfaceMovePath,
-                shadowDeltaHeight + totalDepth
+                bottomSurfacePlane.rightBottom.x - centerSurfaceMovePath,
+                shadowHeight + totalDepth
             ),
-            rightBottom = PointF(bottomShadowPlane.rightBottom.x, size.height.toFloat()),
-            leftBottom = PointF(bottomShadowPlane.leftBottom.x, size.height.toFloat())
+            rightBottom = PointF(bottomSurfacePlane.rightBottom.x, size.height.toFloat()),
+            leftBottom = PointF(bottomSurfacePlane.leftBottom.x, size.height.toFloat())
         )
     }
 
@@ -181,8 +180,8 @@ internal class TiltGeometry(
                 mainPlane.leftTop,
                 mainPlane.rightTop,
                 mainPlane.rightBottom,
-                bottomShadowPlane.rightBottom,
-                bottomShadowPlane.leftBottom,
+                bottomSurfacePlane.rightBottom,
+                bottomSurfacePlane.leftBottom,
                 mainPlane.leftBottom
             )
         )
@@ -257,8 +256,8 @@ internal class TiltGeometry(
         const val BIG_SHIMMER_WIDTh_PERCENTAGE = 0.55
         const val SMALL_SHIMMER_WIDTH_PERCENTAGE = 0.24
         const val SHIMMER_SPACING_PERCENTAGE = 0.12
-        const val DEFAULT_FLOATING_SHADOW_COLOR = Color.BLACK
-        const val DEFAULT_SHADOW_COLOR = Color.TRANSPARENT
+        const val DEFAULT_SHADOW_COLOR = Color.BLACK
+        const val DEFAULT_SURFACE_COLOR = Color.TRANSPARENT
         val DEFAULT_SHADOW_WIDTH: Float = 3f.dp
         val DEFAULT_STROKE_WIDTH: Float = 1f.dp
         const val ANIMATE_ON_TOUCH: Boolean = false
