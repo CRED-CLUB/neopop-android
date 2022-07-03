@@ -19,6 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        maven {
+            url = 'https://libs.dev.cred.club/'
+        }
     }
 }
 

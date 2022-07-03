@@ -8,13 +8,32 @@ What really is NeoPop? NeoPop was created with one simple goal, to create the ne
 
 
 ## Install
-You can install NeoPop  by adding this to your build.gradle file:
+You can install NeoPop by adding these to your project:
 
-```  
+1. Add this to your module `build.gradle` file:
+
+```groovy
 dependencies {  
- implementation 'club.cred.android:neopop:1.0.0'
- }  
-```  
+  implementation 'club.cred:neopop:1.0.0'
+}
+```
+
+
+2. Add this to the root/project `build.gradle` file:
+
+```groovy
+allprojects {
+  repositories {
+    google()
+    jcenter()
+
+    maven {
+        url = 'https://libs.dev.cred.club/'
+    }
+  }
+}
+```
+
 
 # PopLayout
 ![Configs](https://user-images.githubusercontent.com/9965653/173539706-fa521743-b214-4372-87dd-799d9b8b6c70.png)

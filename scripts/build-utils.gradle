@@ -1,0 +1,26 @@
+ext.genVersion = {
+    Properties versionProps = new Properties()
+    versionProps.load(new FileInputStream(file('../version.properties')))
+
+    def versionMajor = versionProps['major'].toInteger()
+    def versionMinor = versionProps['minor'].toInteger()
+    def versionPatch = versionProps['patch'].toInteger()
+    def versionBuild = versionProps['build'].toInteger()
+
+    def verCode = (versionMajor * 10_000_000) + (versionMinor * 100_000) + (versionPatch * 1_000) + versionBuild
+    def verName = "${versionMajor}.${versionMinor}.${versionPatch}"
+    if (versionBuild > 0) {
+        verName = "${verName}-rc${versionBuild}"
+    }
+    def verNameShort = "${versionMajor}.${versionMinor}.${versionPatch}"
+
+    return [verCode, verName, versionBuild, verNameShort]
+}
+
+ext.gitSha = {
+    return 'git rev-parse --short=10 HEAD'.execute().text.trim()
+}
+
+ext.fullGitSha = {
+    return 'git rev-parse HEAD'.execute().text.trim()
+}

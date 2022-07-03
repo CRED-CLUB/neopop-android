@@ -1,0 +1,53 @@
+buildscript {
+    ext {
+        awsAccessKeyId = findProperty('aws_access_key_id') ?: 'dummy'
+        awsSecretAccessKey = findProperty('aws_secret_access_key') ?: 'dummy'
+        s3ArtifactsUrl = findProperty('artifacts_url') ?: 'https://dummy.com'
+    }
+}
+
+repositories {
+    mavenCentral()
+    repositories {
+        maven {
+            url = s3ArtifactsUrl
+            credentials(AwsCredentials) {
+                accessKey = awsAccessKeyId
+                secretKey = awsSecretAccessKey
+            }
+        }
+    }
+}
+
+def verCode, verName, verBuild, verNameShort
+(verCode, verName, verBuild, verNameShort) = genVersion()
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                url = s3ArtifactsUrl
+                credentials(AwsCredentials) {
+                    accessKey = awsAccessKeyId
+                    secretKey = awsSecretAccessKey
+                }
+            }
+        }
+        publications {
+            release(MavenPublication) {
+                groupId 'club.cred'
+                artifactId 'neopop'
+                version "${verName}"
+                if (project.plugins.findPlugin("com.android.library")) {
+                    from components.release
+                }
+
+                pom {
+                    name = 'neopop'
+                    description = 'cred neopop UI library for android'
+                    url = 'https://cred.club'
+                }
+            }
+        }
+    }
+}
