@@ -188,7 +188,8 @@ To render strokes on an elevated button ,add
   android:layout_marginVertical="54dp">    
     
     <androidx.constraintlayout.widget.ConstraintLayout  
- android:layout_width="match_parent"     android:layout_height="match_parent">    
+ 	android:layout_width="match_parent"
+	android:layout_height="match_parent">    
        
        <club.cred.neopop.PopFrameLayout    
         android:id="@+id/topLeft"    
@@ -202,7 +203,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="top|left"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/top"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/top"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -214,7 +216,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="top"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/topRight"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/topRight"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -225,7 +228,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="top|right"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/right"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/right"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -237,7 +241,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="right"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/bottomRight"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/bottomRight"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -248,7 +253,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="bottom|right"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/bottom"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/bottom"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -260,7 +266,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="bottom"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/bottomLeft"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/bottomLeft"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -271,7 +278,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="bottom|left"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/left"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/left"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -283,7 +291,8 @@ To render strokes on an elevated button ,add
         app:neopop_button_position="left"    
         android:clickable="true"/>    
           
-       <club.cred.neopop.PopFrameLayout  android:id="@+id/center"    
+       <club.cred.neopop.PopFrameLayout  
+	android:id="@+id/center"    
         android:layout_width="84dp"    
         android:layout_height="53dp"    
         app:neopop_center_surface_color="#f00"    
@@ -295,7 +304,8 @@ To render strokes on an elevated button ,add
         app:layout_constraintStart_toStartOf="parent"    
         app:neopop_button_position="center"    
         android:clickable="true"/>    
-</androidx.constraintlayout.widget.ConstraintLayout> </club.cred.neopop.PopFrameLayout>  
+    </androidx.constraintlayout.widget.ConstraintLayout> 
+</club.cred.neopop.PopFrameLayout>  
 ```  
 # TiltLayout
 ![Tilt Layout](https://user-images.githubusercontent.com/9965653/172598614-0d656dd4-aaae-471f-a6b3-d8b275e9bfab.png "Tilt Layout")
