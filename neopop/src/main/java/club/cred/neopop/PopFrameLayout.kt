@@ -345,12 +345,10 @@ open class PopFrameLayout @JvmOverloads constructor(
     }
 
     private fun animatePadding(animatedValue: Int) {
-        if (this@PopFrameLayout is ViewGroup) {
-            val delta = animatedValue - previousAnimationValue
-            this@PopFrameLayout.forEach {
-                it.translationY += delta
-                it.translationX += delta
-            }
+        val delta = animatedValue - previousAnimationValue
+        this@PopFrameLayout.forEach {
+            it.translationY += delta
+            it.translationX += delta
         }
         previousAnimationValue = animatedValue
     }
@@ -543,7 +541,7 @@ open class PopFrameLayout @JvmOverloads constructor(
                 shimmerRepeatDelay = shimmerRepeatDelay,
             )
 
-            (this@PopFrameLayout as ViewGroup).forEach {
+            this@PopFrameLayout.forEach {
                 it.translationY = (-depth.roundToInt()).toFloat()
                 it.translationX = (-depth.roundToInt()).toFloat()
             }
