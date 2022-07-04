@@ -47,12 +47,12 @@ These surfaces can be customized in two ways:
 By specifying the `button_position` as `bottom|right`, neopop will compute bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to `button_position`
 ```xml  
 <club.cred.neopop.PopFrameLayout  
-	... 
-	android:clickable="true" 
-	app:neopop_button_position="bottom|right" 
-	app:neopop_center_surface_color="@color/white"
-	app:neopop_depth="3dp" 
-	app:neopop_parent_view_color="@color/black"/>  
+  ... 
+  android:clickable="true" 
+  app:neopop_button_position="bottom|right" 
+  app:neopop_center_surface_color="@color/white"
+  app:neopop_depth="3dp" 
+  app:neopop_parent_view_color="@color/black"/>  
 ```  
 
 ## Flat
@@ -62,23 +62,23 @@ By specifying the `button_position` as `center`, neopop will compute right and b
 Top and left surface's color is computed w.r.t `neopop_parent_view_color` and `neopop_grandparent_view_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout
-	 ...  
-	 android:clickable="true"
-	 app:neopop_parent_view_color="@color/black"  
-	 app:neopop_button_position="center"
-	 app:neopop_center_surface_color="@color/white"
-	 app:neopop_depth="3dp"/>  
+  ...  
+  android:clickable="true"
+  app:neopop_parent_view_color="@color/black"  
+  app:neopop_button_position="center"
+  app:neopop_center_surface_color="@color/white"
+  app:neopop_depth="3dp"/>  
 ```  
 
 ## Shimmer
 
 ```xml  
 <club.cred.neopop.PopFrameLayout    
- ...  
- app:neopop_shimmer_duration="5000" 
- app:neopop_shimmer_width="24dp"    
- app:neopop_shimmer_color="#f00"    
- app:neopop_show_shimmer="true"/>  
+  ...  
+  app:neopop_shimmer_duration="5000" 
+  app:neopop_shimmer_width="24dp"    
+  app:neopop_shimmer_color="#f00"    
+  app:neopop_show_shimmer="true"/>  
  ```  
 ## Flat Strokes
 ![Flat Strokes](https://user-images.githubusercontent.com/9965653/172597728-5830cc72-1d2a-4d52-8089-55fb61449996.png "Flat Strokes")
@@ -86,12 +86,12 @@ Top and left surface's color is computed w.r.t `neopop_parent_view_color` and `n
 To render stroke on a flat button, add `neopop_stroke_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout    
-	 ...  
-	 app:neopop_button_position="center"
-	 app:neopop_draw_full_height="true"    
-	 app:neopop_draw_full_width="true"    
-	 app:neopop_parent_view_color="@color/black"  
-	 app:neopop_stroke_color="#f00">  
+   ...  
+   app:neopop_button_position="center"
+   app:neopop_draw_full_height="true"    
+   app:neopop_draw_full_width="true"    
+   app:neopop_parent_view_color="@color/black"  
+   app:neopop_stroke_color="#f00">  
 ```  
 
 ## Plunk Strokes
@@ -102,15 +102,15 @@ To render strokes on an elevated button ,add
 `neopop_is_stroked_button = "true"` and `neopop_stroke_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout    
-	 ...  
-	 android:clickable="true"
-	 app:neopop_button_position="bottom|right" 
-	 app:neopop_bottom_surface_color="#0f0"
-	 app:neopop_right_surface_color="#0f0" 
-	 app:neopop_top_surface_color="@android:color/transparent"
-	 app:neopop_left_surface_color="@android:color/transparent"    
-	 app:neopop_is_stroked_button="true"    
-	 app:neopop_stroke_color="#0f0">  
+   ...  
+   android:clickable="true"
+   app:neopop_button_position="bottom|right" 
+   app:neopop_bottom_surface_color="#0f0"
+   app:neopop_right_surface_color="#0f0" 
+   app:neopop_top_surface_color="@android:color/transparent"
+   app:neopop_left_surface_color="@android:color/transparent"    
+   app:neopop_is_stroked_button="true"    
+   app:neopop_stroke_color="#0f0">  
 ```  
 
 ## Adjacent Buttons
@@ -120,60 +120,59 @@ To render strokes on an elevated button ,add
 ### Horizontally aligned buttons
 
 ```xml  
-  <Space
-        android:id="@+id/left_space"
-        android:layout_width="3dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/center_top"
-        app:layout_constraintTop_toTopOf="parent" />
-    
+<Space
+  android:id="@+id/left_space"
+  android:layout_width="3dp"
+  android:layout_height="0dp"
+  app:layout_constraintBottom_toBottomOf="parent"
+  app:layout_constraintStart_toStartOf="@id/center_top"
+  app:layout_constraintTop_toTopOf="parent" />
 
-    <club.cred.neopop.PopFrameLayout
-	...
-        android:id="@+id/left_top"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="@id/left_space"
-        app:layout_constraintTop_toTopOf="@id/center_top"
-        app:neopop_button_on_right="@id/center_top">
-        ...content
-    </club.cred.neopop.PopFrameLayout>
+<club.cred.neopop.PopFrameLayout
+  ...
+  android:id="@+id/left_top"
+  android:clickable="true"
+  app:layout_constraintEnd_toEndOf="@id/left_space"
+  app:layout_constraintTop_toTopOf="@id/center_top"
+  app:neopop_button_on_right="@id/center_top">
+  ...content
+</club.cred.neopop.PopFrameLayout>
 
 
-    <club.cred.neopop.PopFrameLayout
-	...
-        android:id="@+id/center_top"
-        android:clickable="true"
-        app:neopop_button_on_left="@id/left_top"
-        app:neopop_center_surface_color="@color/white">
-        ...content
-    </club.cred.neopop.PopFrameLayout>
+<club.cred.neopop.PopFrameLayout
+  ...
+  android:id="@+id/center_top"
+  android:clickable="true"
+  app:neopop_button_on_left="@id/left_top"
+  app:neopop_center_surface_color="@color/white">
+  ...content
+</club.cred.neopop.PopFrameLayout>
 ```  
 ### Vertically Aligned buttons
 ```xml 
-  <Space
-        android:id="@+id/bottom_space"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/right_top" />
+<Space
+  android:id="@+id/bottom_space"
+  android:layout_width="0dp"
+  android:layout_height="3dp"
+  app:layout_constraintBottom_toBottomOf="@id/right_top" />
 
-    <club.cred.neopop.PopFrameLayout
-	...
-        android:id="@+id/right_top"
-        android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/right_bottom"
-        app:neopop_button_on_bottom="@id/right_bottom">
-        ..content
-    </club.cred.neopop.PopFrameLayout>
+<club.cred.neopop.PopFrameLayout
+  ...
+  android:id="@+id/right_top"
+  android:clickable="true"
+  app:layout_constraintBottom_toTopOf="@+id/right_bottom"
+  app:neopop_button_on_bottom="@id/right_bottom">
+  ...content
+</club.cred.neopop.PopFrameLayout>
 
-    <club.cred.neopop.PopFrameLayout
-	...
-        android:id="@+id/right_bottom"
-        android:clickable="true"
-        app:layout_constraintTop_toTopOf="@id/bottom_space"
-        app:neopop_button_on_top="@id/right_top">
-        ...content
-    </club.cred.neopop.PopFrameLayout>
+<club.cred.neopop.PopFrameLayout
+  ...
+  android:id="@+id/right_bottom"
+  android:clickable="true"
+  app:layout_constraintTop_toTopOf="@id/bottom_space"
+  app:neopop_button_on_top="@id/right_top">
+  ...content
+</club.cred.neopop.PopFrameLayout>
 
 ```
 
@@ -186,125 +185,127 @@ To render strokes on an elevated button ,add
   app:neopop_center_surface_color="@color/white"    
   android:layout_marginHorizontal="24dp"    
   android:layout_marginVertical="54dp">    
-    
-    <androidx.constraintlayout.widget.ConstraintLayout  
- 	android:layout_width="match_parent"
-	android:layout_height="match_parent">    
-       
-       <club.cred.neopop.PopFrameLayout    
-        android:id="@+id/topLeft"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:neopop_button_position="top|left"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/top"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:neopop_button_position="top"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/topRight"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:neopop_button_position="top|right"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/right"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:neopop_button_position="right"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/bottomRight"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:neopop_button_position="bottom|right"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/bottom"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:neopop_button_position="bottom"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/bottomLeft"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:neopop_button_position="bottom|left"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/left"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:neopop_button_position="left"    
-        android:clickable="true"/>    
-          
-       <club.cred.neopop.PopFrameLayout  
-	android:id="@+id/center"    
-        android:layout_width="84dp"    
-        android:layout_height="53dp"    
-        app:neopop_center_surface_color="#f00"    
-        app:neopop_parent_view_color="@color/white"    
-        app:neopop_grandparent_view_color="@color/black"    
-        app:layout_constraintBottom_toBottomOf="parent"    
-        app:layout_constraintTop_toTopOf="parent"    
-        app:layout_constraintEnd_toEndOf="parent"    
-        app:layout_constraintStart_toStartOf="parent"    
-        app:neopop_button_position="center"    
-        android:clickable="true"/>    
-    </androidx.constraintlayout.widget.ConstraintLayout> 
+  
+  <androidx.constraintlayout.widget.ConstraintLayout  
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">    
+
+    <club.cred.neopop.PopFrameLayout    
+      android:id="@+id/topLeft"    
+      android:layout_width="84dp"    
+      android:layout_height="53dp"    
+      app:neopop_center_surface_color="#f00"    
+      app:neopop_parent_view_color="@color/white"    
+      app:neopop_grandparent_view_color="@color/black"    
+      app:layout_constraintTop_toTopOf="parent"    
+      app:layout_constraintStart_toStartOf="parent"    
+      app:neopop_button_position="top|left"    
+      android:clickable="true"/>    
+
+    <club.cred.neopop.PopFrameLayout  
+      android:id="@+id/top"    
+      android:layout_width="84dp"    
+      android:layout_height="53dp"    
+      app:neopop_center_surface_color="#f00"    
+      app:neopop_parent_view_color="@color/white"    
+      app:neopop_grandparent_view_color="@color/black"    
+      app:layout_constraintTop_toTopOf="parent"    
+      app:layout_constraintStart_toStartOf="parent"    
+      app:layout_constraintEnd_toEndOf="parent"    
+      app:neopop_button_position="top"    
+      android:clickable="true"/>    
+
+    <club.cred.neopop.PopFrameLayout  
+      android:id="@+id/topRight"    
+      android:layout_width="84dp"    
+      android:layout_height="53dp"    
+      app:neopop_center_surface_color="#f00"    
+      app:neopop_parent_view_color="@color/white"    
+      app:neopop_grandparent_view_color="@color/black"    
+      app:layout_constraintTop_toTopOf="parent"    
+      app:layout_constraintEnd_toEndOf="parent"    
+      app:neopop_button_position="top|right"    
+      android:clickable="true"/>    
+
+    <club.cred.neopop.PopFrameLayout  
+      android:id="@+id/right"    
+      android:layout_width="84dp"    
+      android:layout_height="53dp"    
+      app:neopop_center_surface_color="#f00"    
+      app:neopop_parent_view_color="@color/white"    
+      app:neopop_grandparent_view_color="@color/black"    
+      app:layout_constraintTop_toTopOf="parent"    
+      app:layout_constraintBottom_toBottomOf="parent"    
+      app:layout_constraintEnd_toEndOf="parent"    
+      app:neopop_button_position="right"    
+      android:clickable="true"/>    
+
+    <club.cred.neopop.PopFrameLayout  
+      android:id="@+id/bottomRight"    
+      android:layout_width="84dp"    
+      android:layout_height="53dp"    
+      app:neopop_center_surface_color="#f00"    
+      app:neopop_parent_view_color="@color/white"    
+      app:neopop_grandparent_view_color="@color/black"    
+      app:layout_constraintBottom_toBottomOf="parent"    
+      app:layout_constraintEnd_toEndOf="parent"    
+      app:neopop_button_position="bottom|right"    
+      android:clickable="true"/>    
+
+     <club.cred.neopop.PopFrameLayout  
+       android:id="@+id/bottom"    
+       android:layout_width="84dp"    
+       android:layout_height="53dp"    
+       app:neopop_center_surface_color="#f00"    
+       app:neopop_parent_view_color="@color/white"    
+       app:neopop_grandparent_view_color="@color/black"    
+       app:layout_constraintBottom_toBottomOf="parent"    
+       app:layout_constraintEnd_toEndOf="parent"    
+       app:layout_constraintStart_toStartOf="parent"    
+       app:neopop_button_position="bottom"    
+       android:clickable="true"/>    
+
+     <club.cred.neopop.PopFrameLayout  
+       android:id="@+id/bottomLeft"    
+       android:layout_width="84dp"    
+       android:layout_height="53dp"    
+       app:neopop_center_surface_color="#f00"    
+       app:neopop_parent_view_color="@color/white"    
+       app:neopop_grandparent_view_color="@color/black"    
+       app:layout_constraintBottom_toBottomOf="parent"    
+       app:layout_constraintStart_toStartOf="parent"    
+       app:neopop_button_position="bottom|left"    
+       android:clickable="true"/>    
+
+     <club.cred.neopop.PopFrameLayout  
+       android:id="@+id/left"    
+       android:layout_width="84dp"    
+       android:layout_height="53dp"    
+       app:neopop_center_surface_color="#f00"    
+       app:neopop_parent_view_color="@color/white"    
+       app:neopop_grandparent_view_color="@color/black"    
+       app:layout_constraintBottom_toBottomOf="parent"    
+       app:layout_constraintTop_toTopOf="parent"    
+       app:layout_constraintStart_toStartOf="parent"    
+       app:neopop_button_position="left"    
+       android:clickable="true"/>    
+
+     <club.cred.neopop.PopFrameLayout  
+       android:id="@+id/center"    
+       android:layout_width="84dp"    
+       android:layout_height="53dp"    
+       app:neopop_center_surface_color="#f00"    
+       app:neopop_parent_view_color="@color/white"    
+       app:neopop_grandparent_view_color="@color/black"    
+       app:layout_constraintBottom_toBottomOf="parent"    
+       app:layout_constraintTop_toTopOf="parent"    
+       app:layout_constraintEnd_toEndOf="parent"    
+       app:layout_constraintStart_toStartOf="parent"    
+       app:neopop_button_position="center"    
+       android:clickable="true"/>    
+	  
+  </androidx.constraintlayout.widget.ConstraintLayout> 
+	
 </club.cred.neopop.PopFrameLayout>  
 ```  
 # TiltLayout
@@ -316,15 +317,15 @@ To render strokes on an elevated button ,add
 ![tiltNonFloating](https://user-images.githubusercontent.com/9965653/175874607-e8e10326-1d6d-4b7d-be8f-50cc8f37ee14.gif)
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout  
-     ...
-     android:clickable="true"    
-     app:neopop_parentViewColor="@color/black"    
-     app:neopop_black_shadow_height="15dp"    
-     app:neopop_black_shadow_top_padding="0dp"    
-     app:neopop_card_rotation="18.8"    
-     app:neopop_gravity="on_ground"  
-     app:neopop_shadow_rotation="32"
-     app:neopop_show_shimmer="false"/>  
+  ...
+  android:clickable="true"    
+  app:neopop_parentViewColor="@color/black"    
+  app:neopop_black_shadow_height="15dp"    
+  app:neopop_black_shadow_top_padding="0dp"    
+  app:neopop_card_rotation="18.8"    
+  app:neopop_gravity="on_ground"  
+  app:neopop_shadow_rotation="32"
+  app:neopop_show_shimmer="false"/>  
 ```  
 
 ##  Floating
@@ -333,15 +334,15 @@ To render strokes on an elevated button ,add
 
 ```xml  
 <club.cred.neopop.NeoPopQuadFrameLayout  
-     ....     
-     android:clickable="true"    
-     app:neopop_parentViewColor="@color/black"    
-     app:neopop_black_shadow_height="15dp"    
-     app:neopop_black_shadow_top_padding="0dp"    
-     app:neopop_card_rotation="18.8"    
-     app:neopop_gravity="on_space"  
-     app:neopop_shadow_rotation="32"     
-     app:neopop_show_shimmer="false"/>  
+  ...    
+  android:clickable="true"    
+  app:neopop_parentViewColor="@color/black"    
+  app:neopop_black_shadow_height="15dp"    
+  app:neopop_black_shadow_top_padding="0dp"    
+  app:neopop_card_rotation="18.8"    
+  app:neopop_gravity="on_space"  
+  app:neopop_shadow_rotation="32"     
+  app:neopop_show_shimmer="false"/>  
 ```  
 
 ## Strokes
