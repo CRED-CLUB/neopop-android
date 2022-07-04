@@ -152,8 +152,8 @@ internal class TiltGeometry(
             ),
             leftBottom = PointF(
                 bigShimmerBottomPlane.leftBottom.x -
-                        (shimmerWidth * SMALL_SHIMMER_WIDTH_PERCENTAGE).toInt() -
-                        (shimmerWidth * SHIMMER_SPACING_PERCENTAGE).toInt(),
+                    (shimmerWidth * SMALL_SHIMMER_WIDTH_PERCENTAGE).toInt() -
+                    (shimmerWidth * SHIMMER_SPACING_PERCENTAGE).toInt(),
                 bigShimmerBottomPlane.leftBottom.y
             )
         )

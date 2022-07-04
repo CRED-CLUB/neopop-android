@@ -17,7 +17,6 @@ import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.MotionEvent
-import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
@@ -162,9 +161,9 @@ open class PopFrameLayout @JvmOverloads constructor(
             .calculateButtonStyles()
     }
 
-    //////////////////////////////////
+    // ////////////////////////////////
     // Shimmer properties
-    /////////////////////////////////
+    // ///////////////////////////////
     var shimmerColor: Int by handleDynamicAttr(Color.TRANSPARENT) {
         popStyle = popStyle.copy(shimmerColor = it)
     }
@@ -283,14 +282,6 @@ open class PopFrameLayout @JvmOverloads constructor(
                     } else {
                         updateButtonState(1f)
                     }
-//                buttonAnimator?.doOnEnd {
-//                    popButtonAnimationListeners.forEach { listener ->
-//                        listener.onAnimate(
-//                            NeoPopAnimationState(isButtonGoingUp = false, isCompleted = true),
-//                            1f
-//                        )
-//                    }
-//                }
                     this@PopFrameLayout.provideSafeHapticFeedback()
                     return true
                 }
@@ -334,23 +325,13 @@ open class PopFrameLayout @JvmOverloads constructor(
         } else {
             updateButtonState(0f)
         }
-//        buttonAnimator?.doOnEnd {
-//            popButtonAnimationListeners.forEach { listener ->
-//                listener.onAnimate(
-//                    NeoPopAnimationState(isButtonGoingUp = true, isCompleted = true),
-//                    0f
-//                )
-//            }
-//        }
     }
 
     private fun animatePadding(animatedValue: Int) {
-        if (this@PopFrameLayout is ViewGroup) {
-            val delta = animatedValue - previousAnimationValue
-            this@PopFrameLayout.forEach {
-                it.translationY += delta
-                it.translationX += delta
-            }
+        val delta = animatedValue - previousAnimationValue
+        this@PopFrameLayout.forEach {
+            it.translationY += delta
+            it.translationX += delta
         }
         previousAnimationValue = animatedValue
     }
@@ -421,7 +402,6 @@ open class PopFrameLayout @JvmOverloads constructor(
             shimmerStartDelay =
                 getInt(R.styleable.PopFrameLayout_neopop_shimmer_start_delay, 0).toLong()
 
-            // Calculations
             val calculatedNeoPopStyle = NeoPopHelper.getCalculatedButtonStyles(
                 mainCardColor = centerSurfaceColor,
                 buttonPosition = buttonPosition,
@@ -435,7 +415,6 @@ open class PopFrameLayout @JvmOverloads constructor(
                 grandParentViewColor = grandParentViewColor,
             )
 
-            // after that
             bottomSurfaceColor = getColor(
                 R.styleable.PopFrameLayout_neopop_bottom_surface_color,
                 calculatedNeoPopStyle.bottomSurfaceColor
@@ -543,7 +522,7 @@ open class PopFrameLayout @JvmOverloads constructor(
                 shimmerRepeatDelay = shimmerRepeatDelay,
             )
 
-            (this@PopFrameLayout as ViewGroup).forEach {
+            this@PopFrameLayout.forEach {
                 it.translationY = (-depth.roundToInt()).toFloat()
                 it.translationX = (-depth.roundToInt()).toFloat()
             }

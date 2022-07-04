@@ -43,7 +43,7 @@ class SampleScreensFragment : DialogFragment(), INavigator {
     }
 
     override fun onPreviousPageClicked() {
-        var previousPage = if ((binding?.viewPager?.currentItem?.minus(1) ?: 0) < 0) {
+        val previousPage = if ((binding?.viewPager?.currentItem?.minus(1) ?: 0) < 0) {
             (binding?.viewPager?.currentItem?.plus(3) ?: 0)
         } else {
             (binding?.viewPager?.currentItem?.minus(1) ?: 0)

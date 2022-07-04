@@ -22,11 +22,6 @@ inline fun Canvas.translateWith(dx: Float, dy: Float, block: () -> Unit) {
     translate(-dx, -dy)
 }
 
-fun Canvas.clip(path: Path, block: () -> Unit) {
-    clipPath(path)
-    block()
-}
-
 fun Canvas.drawStroke(stroke: Stroke, paint: Paint) {
     this.drawLine(
         stroke.start.x,

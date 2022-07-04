@@ -73,20 +73,6 @@ data class Polygon(
             close()
         }
     }
-
-    fun resetPathWithNewPoints(points: List<PointF>) {
-        path.apply {
-            reset()
-            points.forEachIndexed { index, pointF ->
-                if (index == 0) {
-                    moveTo(pointF.x, pointF.y)
-                } else {
-                    lineTo(pointF.x, pointF.y)
-                }
-            }
-            close()
-        }
-    }
 }
 
 data class OpenPolygon(
@@ -95,19 +81,6 @@ data class OpenPolygon(
     private val path = Path()
     val fullOutline: Path by lazy {
         path.apply {
-            points.forEachIndexed { index, pointF ->
-                if (index == 0) {
-                    moveTo(pointF.x, pointF.y)
-                } else {
-                    lineTo(pointF.x, pointF.y)
-                }
-            }
-        }
-    }
-
-    fun resetPathWithNewPoints(points: List<PointF>) {
-        path.apply {
-            reset()
             points.forEachIndexed { index, pointF ->
                 if (index == 0) {
                     moveTo(pointF.x, pointF.y)
