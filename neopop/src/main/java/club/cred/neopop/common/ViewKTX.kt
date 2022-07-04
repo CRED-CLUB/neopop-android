@@ -23,7 +23,7 @@ import android.view.View
 
 internal fun View.shouldPerformHaptics(checkForSilentMode: Boolean = false): Boolean {
     val isSilent = checkForSilentMode &&
-            (context.getSystemService(Context.AUDIO_SERVICE) as? AudioManager)?.ringerMode == AudioManager.RINGER_MODE_SILENT
+        (context.getSystemService(Context.AUDIO_SERVICE) as? AudioManager)?.ringerMode == AudioManager.RINGER_MODE_SILENT
 
     val isVibrateOnTouchEnabled = Settings.System.getInt(
         context.contentResolver,
