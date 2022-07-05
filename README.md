@@ -365,8 +365,8 @@ To render strokes on an elevated button ,add
 ## All button attributes
 | Attribute | Description | Value |  
 |--|--|--|  
-|`app:neopop_depth`| depth of shadow | dimension |  
-|`app:neopop_top_surface_color` or `app:neopop_right_surface_color` or `app:neopop_bottom_surface_color` or `app:neopop_left_surface_olor`| shadow colors | color |  
+| `app:neopop_depth`| depth of shadow | dimension |  
+| `app:neopop_top_surface_color` or `app:neopop_right_surface_color` or `app:neopop_bottom_surface_color` or `app:neopop_left_surface_olor`| shadow colors | color |  
 | `app:neopop_parent_view_color` | immediate ancestor's color | color |  
 | `app:neopop_grandparent_view_color` | 2nd level ancestor's color | color |  
 | `app:neopop_stroke_color` | layout's stroke colors | color |  
@@ -379,20 +379,31 @@ To render strokes on an elevated button ,add
 | `app:neopop_shimmer_width` | shimmer width | dimension |  
 | `app:neopop_show_shimmer` | enable shimmer | boolean |  
 | `app:neopop_shimmer_repeat_delay` | repeat delay between shimmers | seconds in millis|  
-|`app:neopop_shimmer_start_delay` | shimmer start delay | seconds in millis |  
-|`app:neopop_animate_on_touch` | use button animator internally to animate | boolean |
+| `app:neopop_shimmer_start_delay` | shimmer start delay | seconds in millis |  
+| `app:neopop_animate_on_touch` | use button animator internally to animate | boolean |
 ## Tilt Specific Attributes
 | Attribute | Description | Value |  
 |--|--|--|  
-| `app:neopop_shadow_color` | bottom plane color | color |  
-| `app:neopop_card_rotation` |  |  |  
-| `app:neopop_shadow_rotation` |  |  |  
+| `app:neopop_depth`| depth of shadow | dimension |  
+| `app:neopop_shadow_color` | shadow color | color |  
+| `app:neopop_center_surface_color` | centre surface color | color |
+| `app:neopop_bottom_surface_color` | bottom surface color | color |
+| `app:neopop_center_surface_rotation` | angle made between y-axis and center surface | float |  
+| `app:neopop_bottom_surface_rotation` | angle made between y-axis and bottom surface | float |  
 | `app:neopop_gravity` | floating or static | `on_space`, `on_ground`|  
-| `app:neopop_top_shimmer_color` | top shimmer color  | color |  
+| `app:neopop_shimmer_color` | shimmer color  | color |  
 | `app:neopop_bottom_shimmer_color` | bottom shimmer color | color |  
-| `app:neopop_black_shadow_top_padding` | | |  
-| `app:neopop_black_shadow_height` |  | |  
-| `app:neopop_floating_shadow_color` | | color |
+| `app:neopop_shadow_top_margin` | margin between bottom of the shadow and TiltFrameLayout | dimension |  
+| `app:neopop_shadow_height` | height that should be occupied by the shadow from total height | dimension |  
+| `app:neopop_shimmer_duration` | total duration of shimmer | seconds in millis |  
+| `app:neopop_shimmer_width` | shimmer width | dimension |  
+| `app:neopop_show_shimmer` | enable shimmer | boolean |  
+| `app:neopop_shimmer_repeat_delay` | repeat delay between shimmers | seconds in millis|  
+| `app:neopop_stroke_color` | stroke color | color |  
+| `app:neopop_stroke_width` | stroke width | color |  
+| `app:neopop_is_stroked_button` | is button stroked or not | Boolean |  
+| `app:neopop_shimmer_start_delay` | shimmer start delay | seconds in millis |  
+| `app:neopop_animate_on_touch` | use button animator internally to animate | boolean |
 
 ## Min SDK
 
