@@ -405,11 +405,51 @@ Pull requests are welcome! We'd love help improving this library. Feel free to b
 ## Contributors
 
 NeoPop would not have been possible if not for the contributions made by CRED's design and frontend teams. Specifically:
-- Rishab Singh Bisht — [Twitter](https://twitter.com/rishabh1310) | [Github](https://github.com/rishabhsinghbisht) | [Linkedin](https://www.linkedin.com/in/rishabh-singh-bisht-b7550938/)
-- Nikhil Panju — [Twitter](https://twitter.com/nikhilpanju) | [Github](https://github.com/nikhilpanju) | [Linkedin](https://www.linkedin.com/in/nikhilpanju/)
-- Ayush Bansal — [Twitter](https://twitter.com/scorpio002) | [Github](https://github.com/bansalayush) | [Linkedin](https://www.linkedin.com/in/ayush-bansal-81861578/)
-- Bhuvanesh Kumar — [Github](https://github.com/bhuvanesh1729) | [Linkedin](https://www.linkedin.com/in/bhuvanesh-kumar-90791a145/)
-- Hari Krishna
+
+- Ayush Bansal
+
+<a href="https://github.com/bansalayush">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</a>
+<a href="https://www.linkedin.com/in/ayush-bansal-81861578/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
+<a href="https://twitter.com/scorpio002">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white">
+</a>
+
+- Bhuvanesh Kumar
+
+<a href="https://github.com/bhuvanesh1729">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</a>
+<a href="https://www.linkedin.com/in/bhuvanesh-kumar-90791a145/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
+
+- Abhilash Das
+
+<a href="https://github.com/das-abhilash">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</a>
+<a href="https://www.linkedin.com/in/abhilashdas/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
+<a href="https://twitter.com/abhilashmyworld">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white">
+</a>
+
+- Nikhil Panju
+
+<a href="https://github.com/nikhilpanju">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+</a>
+<a href="https://www.linkedin.com/in/nikhilpanju/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
+<a href="(https://twitter.com/nikhilpanju">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white">
+</a>
 
 ## License
 
