@@ -118,7 +118,7 @@ To render strokes on an elevated button ,add
 ![Adjacent Buttons](https://user-images.githubusercontent.com/9965653/174827283-4ae73c48-eba8-41ce-9661-30924aef2d3c.png)
 
 ### Horizontally aligned buttons
-
+![Horizontally aligned](https://user-images.githubusercontent.com/9965653/177260584-04525dca-5386-4b9a-bf2e-acb607823b02.gif)
 ```xml  
 <Space
   android:id="@+id/left_space"
@@ -149,6 +149,7 @@ To render strokes on an elevated button ,add
 </club.cred.neopop.PopFrameLayout>
 ```  
 ### Vertically Aligned buttons
+![Vertically Aligned Button](https://user-images.githubusercontent.com/9965653/177260491-e017a368-4556-4368-9709-7b6897756675.gif)
 ```xml 
 <Space
   android:id="@+id/bottom_space"
