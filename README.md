@@ -1,7 +1,10 @@
 # NeoPOP
 NeoPOP is CRED's inbuilt library for using NeoPOP components in your app.
 
-What really is NeoPOP? NeoPOP was created with one simple goal, to create the next generation of a beautiful, affirmative design system. NeoPOP stays true to everything that design at CRED stands for.
+### What really is NeoPOP? 
+[NeoPOP](https://cred.club/neopop) was created with one simple goal; to create the next generation of a beautiful, affirmative design system. NeoPOP stays true to everything that design at CRED stands for.
+
+NeoPOP is built for Android, [iOS](https://github.com/CRED-CLUB/neopop-ios), [Flutter](https://github.com/CRED-CLUB/neopop-flutter) and [Web](https://github.com/CRED-CLUB/neopop-web)
 
 
 ![Banner](https://i.imgur.com/1gN3wzy.jpg "Banner")
