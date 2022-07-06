@@ -1,14 +1,14 @@
-# NeoPop
-NeoPop is CRED's inbuilt library for using NeoPop components in your app.
+# NeoPOP
+NeoPOP is CRED's inbuilt library for using NeoPOP components in your app.
 
-What really is NeoPop? NeoPop was created with one simple goal, to create the next generation of a beautiful, affirmative design system. NeoPop stays true to everything that design at CRED stands for.
+What really is NeoPOP? NeoPOP was created with one simple goal, to create the next generation of a beautiful, affirmative design system. NeoPOP stays true to everything that design at CRED stands for.
 
 
 ![Banner](https://i.imgur.com/1gN3wzy.jpg "Banner")
 
 
 ## Install
-You can install NeoPop by adding these to your project:
+You can install NeoPOP by adding these to your project:
 
 1. Add this to your module `build.gradle` file:
 
@@ -44,7 +44,7 @@ These surfaces can be customized in two ways:
 ![Elevated](https://user-images.githubusercontent.com/9965653/172596228-1bcb92d0-d293-4290-ac38-b9a693a2fab2.png "Elevated Button")
 ![elevated](https://user-images.githubusercontent.com/9965653/175874614-ab316981-29d1-4ed5-a90b-6fe840ac9700.gif)
 
-By specifying the `button_position` as `bottom|right`, neopop will compute bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to `button_position`
+By specifying the `button_position` as `bottom|right`, the layout computes bottom and right surface's color according to `neopop_center_surface_color` . It will also compute visibility of the surfaces according to `button_position`
 ```xml  
 <club.cred.neopop.PopFrameLayout  
   ... 
@@ -58,7 +58,7 @@ By specifying the `button_position` as `bottom|right`, neopop will compute botto
 ## Flat
 ![Flat](https://user-images.githubusercontent.com/9965653/172597180-63b4c386-9b7c-4211-a64c-a79892232481.png "Flat Button")
 ![flatButton](https://user-images.githubusercontent.com/9965653/175874619-b5edb3e8-6c18-4f15-8e60-ef44cb004c94.gif)
-By specifying the `button_position` as `center`, neopop will compute right and bottom surface's color according to `neopop_center_surface_color`.
+By specifying the `button_position` as `center`, the layout will compute right and bottom surface's color according to `neopop_center_surface_color`.
 Top and left surface's color is computed w.r.t `neopop_parent_view_color` and `neopop_grandparent_view_color`
 ```xml  
 <club.cred.neopop.PopFrameLayout
@@ -396,7 +396,7 @@ To render strokes on an elevated button ,add
 
 ## Min SDK
 
-We support a minimum SDK of 21. But the neumorphic components will be rendered appropriately only on devices running SDK version 28 or above.
+We support a minimum SDK of 21.
 
 ## Contributing
 
