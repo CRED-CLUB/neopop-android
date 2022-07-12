@@ -469,7 +469,7 @@ open class PopFrameLayout @JvmOverloads constructor(
                 SHIMMER_ANIMATION_DURATION.toInt()
             )
             val isBottomsheetSurface = getBoolean(
-                R.styleable.PopFrameLayout_neopop_is_bottom_sheet_shadow,
+                R.styleable.PopFrameLayout_neopop_is_bottom_sheet_surface,
                 false
             )
             val drawFullHeight = getBoolean(
