@@ -17,7 +17,7 @@ You can install NeoPOP by adding these to your project:
 
 ```groovy
 dependencies {  
-  implementation 'club.cred:neopop:1.0.0'
+  implementation 'club.cred:neopop:1.0.1'
 }
 ```
 
