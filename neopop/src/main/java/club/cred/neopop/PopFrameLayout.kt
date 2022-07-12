@@ -468,6 +468,10 @@ open class PopFrameLayout @JvmOverloads constructor(
                 R.styleable.PopFrameLayout_neopop_shimmer_duration,
                 SHIMMER_ANIMATION_DURATION.toInt()
             )
+            val isBottomsheetSurface = getBoolean(
+                R.styleable.PopFrameLayout_neopop_is_bottom_sheet_shadow,
+                false
+            )
             val drawFullHeight = getBoolean(
                 R.styleable.PopFrameLayout_neopop_draw_full_height,
                 false
@@ -520,6 +524,7 @@ open class PopFrameLayout @JvmOverloads constructor(
                 disabledRightSurfaceColor = disabledRightSurfaceColor,
                 shimmerStartDelay = shimmerStartDelay,
                 shimmerRepeatDelay = shimmerRepeatDelay,
+                isBottomSheetSurface = isBottomsheetSurface
             )
 
             this@PopFrameLayout.forEach {

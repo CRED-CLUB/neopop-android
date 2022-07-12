@@ -87,6 +87,7 @@
     <attr name="neopop_shimmer_repeat_delay" format="integer" />
     <attr name="neopop_shimmer_start_delay" format="integer" />
     <attr name="neopop_animate_on_touch" format="boolean" />
+    <attr name="neopop_is_bottom_sheet_surface" format="boolean"/>
 
     <!--attributes for switches-->
     <attr name="checked_drawable" format="reference" />
@@ -138,6 +139,7 @@
         <attr name="neopop_shimmer_repeat_delay" />
         <attr name="neopop_shimmer_start_delay" />
         <attr name="neopop_animate_on_touch" />
+        <attr name="neopop_is_bottom_sheet_surface"/>
     </declare-styleable>
 
     <declare-styleable name="TiltFrameLayout">
@@ -161,44 +163,6 @@
         <attr name="neopop_stroke_width" />
         <attr name="neopop_is_stroked_button" />
         <attr name="neopop_animate_on_touch" />
-    </declare-styleable>
-
-    <declare-styleable name="NeoPopButton">
-        <attr name="neopop_depth" />
-        <attr name="neopop_stroke_width" />
-        <attr name="neopop_top_surface_color" />
-        <attr name="neopop_right_surface_color" />
-        <attr name="neopop_bottom_surface_color" />
-        <attr name="neopop_left_surface_color" />
-        <attr name="neopop_parent_view_color" />
-        <attr name="neopop_grandparent_view_color" />
-
-        <attr name="neopop_stroke_color" />
-        <attr name="neopop_center_surface_color" />
-        <attr name="neopop_is_top_surface_visible" />
-        <attr name="neopop_is_left_surface_visible" />
-        <attr name="neopop_is_bottom_surface_visible" />
-        <attr name="neopop_is_right_surface_visible" />
-        <attr name="neopop_shimmer_duration" />
-        <!-- to add static strokes on bottom and right corner of the button . for a specialized press effect-->
-        <attr name="neopop_is_stroked_button" />
-        <attr name="neopop_button_position" />
-        <!-- assign reference of button which is on top of this button -->
-        <attr name="neopop_button_on_top" />
-
-        <!--assign reference of button which is on left of this button -->
-        <attr name="neopop_button_on_left" />
-
-        <!-- assign reference of button which is on bottom of this button-->
-        <attr name="neopop_button_on_bottom" />
-
-        <!--assign reference of button which is on right of this button -->
-        <attr name="neopop_button_on_right" />
-
-        <attr name="neopop_shimmer_color" />
-        <attr name="neopop_shimmer_width" />
-        <attr name="neopop_show_shimmer" />
-
     </declare-styleable>
 
     <declare-styleable name="NeoPopToggleButton">
