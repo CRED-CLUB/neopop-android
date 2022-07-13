@@ -90,7 +90,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     private var onLayoutCalled = false
 
     /**
-     padding between shadow and button while floating
+    padding between shadow and button while floating
      **/
     internal var shadowTopMargin = 0.dp
     internal var shadowHeight = 0.dp
@@ -98,7 +98,7 @@ open class TiltFrameLayout @JvmOverloads constructor(
     internal var animateOnTouch: Boolean by onFieldChange(TiltGeometry.ANIMATE_ON_TOUCH) {
         copy(animateOnTouch = it)
     }
-    private var centerSurfaceColor: Int by onFieldChange(0) {
+    var centerSurfaceColor: Int by onFieldChange(0) {
         copy(
             centerSurfaceColor = it,
             bottomSurfaceColor = PopFrameLayoutStyle.getVerticalSurfaceColor(it)
