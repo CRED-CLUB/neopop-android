@@ -30,7 +30,7 @@ import club.cred.neopop.popButton.NeoPopGeometry.Companion.DEFAULT_STROKE_WIDTH
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
-internal class PopDrawable(
+class PopDrawable(
     data: PopFrameLayoutStyle = PopFrameLayoutStyle()
 ) :
     Drawable(),
@@ -201,7 +201,7 @@ internal class PopDrawable(
 
     private fun drawEdges(canvas: Canvas) {
         val slantedLineStrokeWidth = (DEFAULT_STROKE_WIDTH * (1 - pressFraction)) +
-            (pressFraction * DEFAULT_STROKE_WIDTH / SQRT_2)
+                (pressFraction * DEFAULT_STROKE_WIDTH / SQRT_2)
         val slantedLineStrokeWidthSqrt = slantedLineStrokeWidth / (SQRT_2 * 2)
 
         popStyleData.surfaceStrokeColors?.centerSurfaceStrokeColors?.bottomColor?.let {
@@ -265,9 +265,9 @@ internal class PopDrawable(
 
     override fun onStateChange(state: IntArray?): Boolean {
         isDrawableEnabled = !(
-            state?.contains(-android.R.attr.state_enabled) == true ||
-                state?.contains(android.R.attr.state_enabled) == false
-            )
+                state?.contains(-android.R.attr.state_enabled) == true ||
+                        state?.contains(android.R.attr.state_enabled) == false
+                )
         return super.onStateChange(state)
     }
 
