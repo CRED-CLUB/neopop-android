@@ -18,7 +18,7 @@ import club.cred.neopop.common.SHIMMER_ANIMATION_DURATION
 import club.cred.neopop.common.dp
 import kotlin.math.roundToInt
 
-internal data class PopFrameLayoutStyle(
+data class PopFrameLayoutStyle(
     val centerSurfaceColor: Int = 0,
     val topSurfaceColor: Int = Color.TRANSPARENT,
     val bottomSurfaceColor: Int = Color.TRANSPARENT,
